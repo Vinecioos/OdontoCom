@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"rel="stylesheet">
+  <link rel="shortcut icon" href="assets/LogoFav.PNG" type="image/x-icon">
+  <title>Login</title>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 100px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    input[type="submit"] {
+      background-color: #005632;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #005632;
+    }
+
+    .forgot-password {
+      text-align: right;
+      margin-bottom: 10px;
+    }
+
+    .forgot-password a {
+      text-decoration: none;
+      color: #777;
+    }
+
+    .signup-link {
+      text-align: center;
+    }
+
+    .signup-link a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+    #recuperarSenha {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="loginContainer">
+    <h2>Login</h2>
+    <form action="">
+      <label for="email">Email:</label>
+      <input type="text" id="email" name="email" required><br>
+
+      <label for="password">Senha:</label>
+      <input type="password" id="password" name="password" required><br>
+
+      <input type="submit" value="Iniciar Sessão">
+    </form>
+    <div class="forgot-password">
+      <a href="#" id="forgotPasswordLink">Esqueci minha senha</a>
+    </div>
+    <div class="signup-link">
+      <span>Não tem uma conta? </span><br>
+      <a href="#">Cadastre-se</a>
+    </div>
+  </div>
+
+  <div class="container" id="recuperarSenha">
+    <h2>Recuperar Senha</h2>
+    <form action="">
+      <label for="email">Email:</label>
+      <input type="text" id="email" name="email" required><br>
+      <input type="submit" value="Enviar">
+    </form>
+    <div class="signup-link">
+      <span>Voltar para </span><a href="#" id="voltarLogin">Login</a>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("forgotPasswordLink").addEventListener("click", function(event) {
+      event.preventDefault(); 
+      document.getElementById("loginContainer").style.display = "none";
+      document.getElementById("recuperarSenha").style.display = "block";
+    });
+    document.getElementById("voltarLogin").addEventListener("click", function(event) {
+      event.preventDefault();
+      document.getElementById("recuperarSenha").style.display = "none";
+      document.getElementById("loginContainer").style.display = "block";
+    });
+  </script>
+</body>
+</html>

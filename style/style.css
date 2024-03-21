@@ -1,0 +1,20 @@
+@import url("cabecalho.css");
+@import url("banner.css");
+@import url("tratamentos.css");
+@import url("sobrenos.css");
+@import url("rodape.css");
+
+
+:root{
+    --cor-principal: #005632;
+    --cor-carrosel: #47DFED;
+    --cor-texto-principal: #ffff;
+    ;
+}
+
+*{
+   margin: 0;
+   padding: 0;
+   font-family: "Poppins", sans-serif;
+}
+

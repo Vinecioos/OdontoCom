@@ -1,0 +1,14 @@
+.rodape{
+   background-color: rgb(71, 71, 71);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 3.5em;
+}
+
+.rodape__escrita{
+    text-decoration: none;
+    color: var(--cor-texto-principal);
+    font-size: 1em;
+    color: rgb(168, 168, 168);
+}
