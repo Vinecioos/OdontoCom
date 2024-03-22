@@ -15,18 +15,29 @@
         echo "window.location='cadastro.html';</script>";
     } 
     else {
-        if($_POST['password'] === $_POST['confirmed_password']){
-            $email = $_POST['email'];
-            $senha = $_POST['password'];
-    
-            $result = mysqli_query($conexao, "INSERT INTO user(email, senha) VALUES ('$email', '$senha')");
-            echo "<script>alert('Cadastro realizado com sucesso!');";
-            echo "window.location='login.html';</script>";
+        $sqlemail = "SELECT * FROM user WHERE email = '$email'";
+
+        $result = $conexao -> query($sqlemail);
+        
+        if(mysqli_num_rows($result) < 1){
+            if($_POST['password'] === $_POST['confirmed_password']){
+                $email = $_POST['email'];
+                $senha = $_POST['password'];
+        
+                $result = mysqli_query($conexao, "INSERT INTO user(email, senha) VALUES ('$email', '$senha')");
+                echo "<script>alert('Cadastro realizado com sucesso!');";
+                echo "window.location='login.html';</script>";
+            }
+            else{
+                echo "<script>alert('Senha inválida!');";
+                echo "window.location='cadastro.html';</script>";
+            }
         }
         else{
-            echo "<script>alert('Senha inválida!');";
-        echo "window.location='cadastro.html';</script>";
+            echo "<script>alert('email já cadastrado!');";
+            echo "window.location='login.html';</script>";
         }
+        
     }
 
 
