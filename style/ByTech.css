@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+    background-color: black;
+}
+
+header{
+    color: white;
+    display: flex;
+    justify-content: center;
+    font-size: 60px;
+    border-bottom:  2px solid #564500;
+}
+
+.container {
+    padding-top: 7%;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%; 
+    justify-items: center; 
+    text-align: center; 
+}
+
+
+.foto{
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+}
+
+.nome{
+    font-size: 25px;
+    color: white;
+}
+
+.container > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
