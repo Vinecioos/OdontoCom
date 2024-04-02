@@ -23,8 +23,11 @@
             if($_POST['password'] === $_POST['confirmed_password']){
                 $email = $_POST['email'];
                 $senha = $_POST['password'];
+                $nome = $_POST['nome'];
+                $cpf = $_POST['cpf'];
+                $telefone = $_POST['telefone'];
         
-                $result = mysqli_query($conexao, "INSERT INTO user(email, senha) VALUES ('$email', '$senha')");
+                $result = mysqli_query($conexao, "INSERT INTO user(email, senha, nome, telefone, CPF) VALUES ('$email', '$senha', '$nome','$telefone','$cpf')");
                 echo "<script>alert('Cadastro realizado com sucesso!');";
                 echo "window.location='login.html';</script>";
             }
