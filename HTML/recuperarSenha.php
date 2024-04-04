@@ -6,7 +6,6 @@
 
     $conexao = new mysqli($dbHost,$dbUsername,$dbPassword,$dbName);
 
-    /* Qualquer email cadastrado já altera a senha da pessoa, nescessario colocar segurança na conta da pessoa */
     if(!isset($_POST['submit'])){
         $email = $_POST['email'];
         $codigoSeg = $_POST['codigoSeg'];
