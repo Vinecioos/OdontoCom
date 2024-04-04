@@ -50,3 +50,75 @@
     border-bottom: 50%;
     font-size: 25px;
 }
+
+.cabecalho__informacoes{
+    display: block;
+}
+
+.cabecalho-logado{
+    display: none;
+
+}
+
+.perfil{
+    color: #fff;
+    margin-right: 3em;
+    text-decoration: none;
+    font-size: 24px;
+    position: relative;
+}
+
+.cabecalho .cabecalho-logado i{
+    color: #fff;
+    font-size: 30px;
+    margin-right: 10px;
+
+}
+
+.cabecalho .menu-perfil{
+    background-color: #000;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 9999;
+    width: 0%;
+    overflow: hidden;
+    transition: 350ms;
+}
+
+.menu-perfil.abrir-menu{
+    width: 30%;
+}
+
+.menu-perfil.abrir-menu ~ .overlay-menu{
+    display: block;
+}
+
+.menu-perfil nav ul{
+    text-align: right;
+}
+
+.menu-perfil nav ul li a{
+    color: #fff;
+    font-size: 20px;
+    font-weight: 300;
+    padding: 20px 8%;
+    display: block;
+    text-decoration: none;
+}
+
+.menu-perfil nav ul li a:hover{
+    background-color: gray;
+}
+
+.overlay-menu{
+    background-color: #000000a7;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9998;
+    display: none;
+}
