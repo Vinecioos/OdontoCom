@@ -51,8 +51,10 @@
     font-size: 25px;
 }
 
+/*BARRA PERFIL */
+
 .cabecalho__informacoes{
-    display: block;
+    display: flex;
 }
 
 .cabecalho-logado{
@@ -60,9 +62,18 @@
 
 }
 
-.perfil{
+.meu-perfil{
     color: #fff;
     margin-right: 3em;
+    text-decoration: none;
+    font-size: 24px;
+    position: relative;
+}
+
+.inicio{
+    color: #fff;
+    margin-right: 3em;
+    margin-top: 1%;
     text-decoration: none;
     font-size: 24px;
     position: relative;
@@ -72,11 +83,12 @@
     color: #fff;
     font-size: 30px;
     margin-right: 10px;
+    cursor: pointer;
 
 }
 
-.cabecalho .menu-perfil{
-    background-color: #000;
+.menu-perfil{
+    background-color: var(--cor-secundaria);
     height: 100vh;
     position: fixed;
     top: 0;
@@ -85,6 +97,20 @@
     width: 0%;
     overflow: hidden;
     transition: 350ms;
+}
+
+.menu-perfil .btn-fechar i{
+    cursor: pointer;
+    color: #fff;
+    font-size: 30px;
+}
+
+.menu-perfil .btn-fechar i:hover{
+    box-shadow: 0 0 2px #ffffff78;
+}
+
+.menu-perfil .btn-fechar {
+    padding: 10px 85%;
 }
 
 .menu-perfil.abrir-menu{
@@ -96,24 +122,30 @@
 }
 
 .menu-perfil nav ul{
-    text-align: right;
+    text-align: left;
 }
 
 .menu-perfil nav ul li a{
     color: #fff;
     font-size: 20px;
     font-weight: 300;
-    padding: 20px 8%;
+    padding: 20px 12%;
     display: block;
     text-decoration: none;
 }
+.menu-perfil p{
+    color: #fff;
+    font-size: 20px;
+    font-weight: 300;
+    padding: 20px 12%;
+}
 
 .menu-perfil nav ul li a:hover{
-    background-color: gray;
+    background-color: var(--cor-principal);
 }
 
 .overlay-menu{
-    background-color: #000000a7;
+    background-color: #00000044;
     width: 100%;
     height: 100%;
     position: fixed;
@@ -121,4 +153,53 @@
     left: 0;
     z-index: 9998;
     display: none;
+}
+
+/*CABEÇALHO SECUNDARIO CADASTRO*/
+
+.cabecalho-secundario{
+    background-color: var(--cor-secundaria);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+    box-shadow:  0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.cabecalho-secundario p{
+    font-size: 24px;
+    padding: 10px 8%;
+    color: #fff;
+    text-decoration: underline;
+}
+
+.nav-meus-dados{
+    padding: 60px 4%;
+}
+
+nav.nav-meus-dados ul{
+    display: inline-block;
+    list-style-type: none;
+    margin: 30px 0;
+}
+
+.nav-meus-dados ul li{
+    padding: 10px 0;
+}
+
+.nav-meus-dados p {
+    font-size: 22px;
+}
+
+.nav-meus-dados a{
+    display: inline-block;
+    font-size: 22px;
+    text-decoration: none;
+    color: #222222;
+
+}
+.nav-meus-dados a:hover{
+    color: #000;  
+    transition: 350ms;
+    transform: scale(1.03);
 }

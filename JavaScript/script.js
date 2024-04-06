@@ -26,16 +26,16 @@ document.addEventListener("DOMContentLoaded", function() {
 let btnMenu = document.getElementById("btn-menu-perfil");
 let menu = document.getElementById("menu-perfil");
 let overlay = document.getElementById("overlay-menu");
+let btnSair = document.getElementById("bi bi-x");
 
 btnMenu.addEventListener('click', ()=>{
     menu.classList.add('abrir-menu')
-})
-
-menu.addEventListener('click', ()=>{
-    menu.classList.remove('abrir-menu')
 })
 
 overlay.addEventListener('click', ()=>{
     menu.classList.remove('abrir-menu')
 })
 
+btnSair.addEventListener('click', ()=>{
+    menu.classList.remove('abrir-menu')
+})
