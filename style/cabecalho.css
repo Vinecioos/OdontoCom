@@ -1,22 +1,22 @@
-
-.cabecalho{
-    background-color:var(--cor-principal);
+.cabecalho {
+    background-color: var(--cor-principal);
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: auto;
-    box-shadow:  0 2px 4px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
 }
 
-.logo{
+.logo {
     display: flex;
-    width: 60%; 
+    width: 60%;
     height: 100%;
     margin-left: 5%;
     justify-content: center;
+    cursor: pointer;
 }
 
-.cabecalho__informacoes__menu{
+.cabecalho__informacoes__menu {
     margin-right: 3em;
     text-decoration: none;
     font-size: 25px;
@@ -24,7 +24,7 @@
     color: #ffff;
 }
 
-.cabecalho__informacoes__menu:after{
+.cabecalho__informacoes__menu:after {
     content: "";
     position: absolute;
     bottom: 0;
@@ -37,13 +37,13 @@
     transition: transform 0.5s ease-out;
 }
 
-.cabecalho__informacoes__menu:hover:after{
+.cabecalho__informacoes__menu:hover:after {
     transform: scaleX(1);
     transform-origin: bottom center;
     font-size: 50px;
 }
 
-.cabecalho__botao{
+.cabecalho__botao {
     border: none;
     background-color: var(--cor-principal);
     cursor: pointer;
@@ -53,16 +53,16 @@
 
 /*BARRA PERFIL */
 
-.cabecalho__informacoes{
-    display: flex;
-}
-
-.cabecalho-logado{
+.cabecalho__informacoes {
     display: none;
+}
+
+.cabecalho-logado {
+    display: flex;
 
 }
 
-.meu-perfil{
+.meu-perfil {
     color: #fff;
     margin-right: 3em;
     text-decoration: none;
@@ -70,7 +70,7 @@
     position: relative;
 }
 
-.inicio{
+.inicio {
     color: #fff;
     margin-right: 3em;
     margin-top: 1%;
@@ -79,15 +79,19 @@
     position: relative;
 }
 
-.cabecalho .cabecalho-logado i{
+.cabecalho .cabecalho-logado i {
     color: #fff;
     font-size: 30px;
     margin-right: 10px;
     cursor: pointer;
-
 }
 
-.menu-perfil{
+.cabecalho .cabecalho-logado a:hover{    
+    transition: 350ms;
+    transform: scale(1.05);
+}
+
+.menu-perfil {
     background-color: var(--cor-secundaria);
     height: 100vh;
     position: fixed;
@@ -99,13 +103,13 @@
     transition: 350ms;
 }
 
-.menu-perfil .btn-fechar i{
+.menu-perfil .btn-fechar i {
     cursor: pointer;
     color: #fff;
     font-size: 30px;
 }
 
-.menu-perfil .btn-fechar i:hover{
+.menu-perfil .btn-fechar i:hover {
     box-shadow: 0 0 2px #ffffff78;
 }
 
@@ -113,19 +117,19 @@
     padding: 10px 85%;
 }
 
-.menu-perfil.abrir-menu{
+.menu-perfil.abrir-menu {
     width: 30%;
 }
 
-.menu-perfil.abrir-menu ~ .overlay-menu{
+.menu-perfil.abrir-menu~.overlay-menu {
     display: block;
 }
 
-.menu-perfil nav ul{
+.menu-perfil nav ul {
     text-align: left;
 }
 
-.menu-perfil nav ul li a{
+.menu-perfil nav ul li a {
     color: #fff;
     font-size: 20px;
     font-weight: 300;
@@ -133,18 +137,19 @@
     display: block;
     text-decoration: none;
 }
-.menu-perfil p{
+
+.menu-perfil p {
     color: #fff;
     font-size: 20px;
     font-weight: 300;
     padding: 20px 12%;
 }
 
-.menu-perfil nav ul li a:hover{
+.menu-perfil nav ul li a:hover {
     background-color: var(--cor-principal);
 }
 
-.overlay-menu{
+.overlay-menu {
     background-color: #00000044;
     width: 100%;
     height: 100%;
@@ -155,35 +160,38 @@
     display: none;
 }
 
-/*CABEÇALHO SECUNDARIO CADASTRO*/
+/*CABEÇALHO SECUNDARIO PERFIL*/
 
-.cabecalho-secundario{
+.cabecalho-secundario {
     background-color: var(--cor-secundaria);
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: auto;
-    box-shadow:  0 2px 4px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
 }
 
-.cabecalho-secundario p{
+.cabecalho-secundario a {
     font-size: 24px;
-    padding: 10px 8%;
+    padding: 10px 20%;
     color: #fff;
     text-decoration: underline;
 }
 
-.nav-meus-dados{
-    padding: 60px 4%;
+/*barra lateral perfil*/
+
+.nav-meus-dados {
+    width: 400px;
+    padding: 60px 8%;
 }
 
-nav.nav-meus-dados ul{
+nav.nav-meus-dados ul {
     display: inline-block;
     list-style-type: none;
     margin: 30px 0;
 }
 
-.nav-meus-dados ul li{
+.nav-meus-dados ul li {
     padding: 10px 0;
 }
 
@@ -191,15 +199,71 @@ nav.nav-meus-dados ul{
     font-size: 22px;
 }
 
-.nav-meus-dados a{
+.nav-meus-dados a {
     display: inline-block;
     font-size: 22px;
     text-decoration: none;
     color: #222222;
 
 }
-.nav-meus-dados a:hover{
-    color: #000;  
+
+.nav-meus-dados a:hover {
+    color: #000;
     transition: 350ms;
     transform: scale(1.03);
+}
+
+/*corpo dados pessoais*/
+
+.main-dados-pessoais {
+    display: flex;
+    min-height: calc(100vh - 3.5em);
+}
+
+.conteudo {
+    padding: 30px 4%;
+    width: 100%;
+}
+
+.conteudo .container {
+    width: 100%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.conteudo .container form{
+    width: 100%;
+}
+.container .form-edit input{
+    padding: 10px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-edit .input-nome{
+    width: 700px;
+}
+.form-edit .input-email{
+    width: 400px;
+}
+
+.container input[type="submit"] {
+    width: 150px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin: 0 80%;
+}
+
+.container input[type="submit"]:hover {
+    background-color: #45a049;
+}
+.container input[type="submit"]:disabled {
+    background-color: rgb(163, 163, 163);
 }

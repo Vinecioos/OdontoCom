@@ -28,6 +28,15 @@ let menu = document.getElementById("menu-perfil");
 let overlay = document.getElementById("overlay-menu");
 let btnSair = document.getElementById("bi bi-x");
 
+let btnHabilitaEditar = document.getElementById("editar-perfil");
+let nomeEditar = document.querySelector(".input-nome");
+let emailEditar = document.querySelector(".input-email");
+let telEditar = document.querySelector(".input-tel");
+let cpfEditar = document.querySelector(".input-cpf");
+let senhaEditar = document.querySelector(".input-senha");
+let btnEditar = document.querySelector(".input-edit");
+let cabecalho = document.getElementById("cabecalho-secundario");
+
 btnMenu.addEventListener('click', ()=>{
     menu.classList.add('abrir-menu')
 })
@@ -38,4 +47,17 @@ overlay.addEventListener('click', ()=>{
 
 btnSair.addEventListener('click', ()=>{
     menu.classList.remove('abrir-menu')
+})
+
+btnHabilitaEditar.addEventListener('click', ()=>{
+
+    cabecalho.innerHTML += " > Editar";
+
+    nomeEditar.removeAttribute("disabled");
+    emailEditar.removeAttribute("disabled");
+    telEditar.removeAttribute("disabled");
+    cpfEditar.removeAttribute("disabled");
+    senhaEditar.removeAttribute("disabled");
+    btnEditar.removeAttribute("disabled");
+
 })

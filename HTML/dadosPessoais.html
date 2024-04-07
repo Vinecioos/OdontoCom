@@ -20,7 +20,9 @@
 <body>
     <header class="cabecalho">
         <div class="cabecalho__logo">
-            <img class="logo" src="../assets/OdontoCom_White.png" alt="">
+            <a href="index.html">
+                <img class="logo" src="../assets/OdontoCom_White.png" alt="Logo">
+              </a>
         </div>
 
         <nav class="cabecalho-logado">
@@ -54,26 +56,51 @@
     </header>
     <!--FIM Cabeçalho-->
     <div class="cabecalho-secundario">
-        <p>Meus Dados</p>
+        <a id="cabecalho-secundario" href="#">Meus Dados</a>
     </div>
-    <!--FIM Cabeçalho Secundário-->
-    <nav class="nav-meus-dados">
-        <p>Olá, [nome]!</p>
-        <p>Seja bem-vindo à sua conta!</p>
-        <ul>
-            <li><a href="#">Editar Perfil</a></li>
-            <li><a href="index.html">Voltar para a página principal</a></li>
-            <li><a href="#">Sair</a></li>
-        </ul>
-    </nav>
-    <!--FIM NAV Meus Dados-->
-    <main>
-        <section>
-            <P>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum dicta perspiciatis autem velit reiciendis? Animi repellendus minima alias incidunt, voluptatum velit ex dolor. Corporis adipisci facilis vero beatae optio commodi?</P>
+    <!--FIM Cabeçalho Secundário-->    
+    <main class="main-dados-pessoais">
+        <section class="menu-lateral">
+            <nav class="nav-meus-dados">
+                <p>Olá, [nome]!</p>
+                <p>Seja bem-vindo à sua conta!</p>
+                <ul>
+                    <li><a id="editar-perfil" href="#">Editar Perfil</a></li>
+                    <li><a href="index.html">Voltar para a página principal</a></li>
+                    <li><a href="#">Sair</a></li>
+                </ul>
+            </nav>            
+        </section><!--FIM NAV Meus Dados-->
+        <section class="conteudo">
+            <div class="container" id="editContainer">
+                <form action="cadastro.php" method="post" class="form-edit">
+                  <label for="nome">Nome:</label> <br>
+                  <input placeholder="[Nome Completo]" class="input-nome" type="text" id="nome" name="nome" disabled><br>
+
+                  <label for="email">Email:</label> <br>
+                  <input placeholder="usuario@email.com" class="input-email" type="text" id="email" name="email" disabled><br>            
+            
+                  <label for="telefone">Telefone:</label> <br>
+                  <input placeholder="(  )      -    " class="input-tel" type="tel" id="telefone" name="telefone" disabled><br>
+            
+                  <label for="cpf">CPF:</label> <br>
+                  <input placeholder="123.456.789-00  " class="input-cpf" type="text" id="cpf" name="cpf" disabled><br>
+            
+                  <label for="password">Senha:</label> <br>
+                  <input placeholder="*********" class="input-senha" type="password" id="password" name="password" disabled><br>
+            
+                  <input class="input-edit" type="submit" value="Editar" disabled>
+                </form>
+              </div>
         </section>
     </main>
     <!--FIM Main-->
-
+    <footer>
+        <div class="rodape">
+          <a class="rodape__escrita" href="ByTech.html">&copy; Criado por ByTech</a>
+        </div>
+      </footer>
+      <!--Fim Rodapé-->
 
 </body>
 
