@@ -26,9 +26,12 @@
                 $nome = $_POST['nome'];
                 $cpf = $_POST['cpf'];
                 $telefone = $_POST['telefone'];
+
+                $codigoSeg = strtoupper(substr(str_replace('-', '', uniqid()), 0, 6));
+
+                $result = mysqli_query($conexao, "INSERT INTO user(email, senha, nome, telefone, CPF, codigoSeg) VALUES ('$email', '$senha', '$nome','$telefone','$cpf','$codigoSeg')");
         
-                $result = mysqli_query($conexao, "INSERT INTO user(email, senha, nome, telefone, CPF) VALUES ('$email', '$senha', '$nome','$telefone','$cpf')");
-                echo "<script>alert('Cadastro realizado com sucesso!');";
+                echo "<script>alert('Cadastro realizado com sucesso! ANOTE SEU CODIGO DE SEGURANÇA: $codigoSeg');";
                 echo "window.location='login.html';</script>";
             }
             else{
@@ -42,9 +45,4 @@
         }
         
     }
-
-
-    
-
-    
 ?>
