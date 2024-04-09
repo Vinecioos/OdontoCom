@@ -7,9 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <script src="../JavaScript/script.js" defer></script>
   <link rel="stylesheet" href="../style/style.css">
@@ -21,16 +19,67 @@
   <!--Cabeçalho-->
   <header class="cabecalho">
     <div class="cabecalho__logo">
-      <a href="index.html">
+      <a href="indexLogado.php">
         <img class="logo" src="../assets/OdontoCom_White.png" alt="Logo">
       </a>
     </div>
 
-    <nav>
+    <nav class="cabecalho-logado">
       <button id="botao1" class="cabecalho__botao cabecalho__informacoes__menu">Sobre nós</button>
       <button id="botao2" class="cabecalho__botao cabecalho__informacoes__menu">Tratamentos</button>
-      <a class="cabecalho__informacoes__menu" href="login.html" id="cadastro">Cadastrar/Logar</a>
+
+      <div id="btn-menu-perfil" class="btn-menu-perfil">
+        <i class="bi bi-person-circle"></i>
+        <a href="#" class="meu-perfil">Meu Perfil</a>
+      </div>
+
     </nav>
+
+    <div class="menu-perfil" id="menu-perfil">
+      <div class="btn-fechar">
+        <i class="bi bi-x" id="bi bi-x"></i>
+      </div>
+
+      <nav>
+        <ul>
+          <li>
+            <p><?php
+                session_start();
+                $dbHost = "Localhost";
+                $dbUsername = "root";
+                $dbPassword = "";
+                $dbName = "login";
+
+                $conexao = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
+
+                // Verifica se o usuário está autenticado
+                if (isset($_SESSION['email'])) {
+                  $email = $_SESSION['email'];
+
+                  // Query para buscar o nome do usuário
+                  $sql = "SELECT nome FROM user WHERE email = '$email'";
+                  $result = $conexao->query($sql);
+
+                  // Se a consulta retornar resultados
+                  if ($result->num_rows > 0) {
+                    $row = $result->fetch_assoc();
+                    $nomeDoUsuario = $row['nome'];
+
+                    // Exibindo o nome do usuário
+                    echo "Bem Vindo, $nomeDoUsuario!";
+                  }
+                }
+                ?></p>
+          </li>
+          <li><a href="agendamentos.html">Agendamentos</a></li>
+          <li><a href="dadosPessoais.php">Dados Pessoais</a></li>
+          <li><a href="index.html">Sair</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="overlay-menu" id="overlay-menu"></div>
+
   </header>
   <!--FIM Cabeçalho-->
   <!--Body-->

@@ -26,7 +26,7 @@
         else{
             $_SESSION['email'] = $email;
             $_SESSION['password'] = $senha;
-            header('Location: index.html');
+            header('Location: indexLogado.php');
         }
     }
     else{

@@ -53,10 +53,6 @@
 
 /*BARRA PERFIL */
 
-.cabecalho__informacoes {
-    display: none;
-}
-
 .cabecalho-logado {
     display: flex;
 
