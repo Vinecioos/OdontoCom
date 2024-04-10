@@ -25,8 +25,8 @@
     </div>
 
     <nav class="cabecalho-logado">
-      <button id="botao1" class="cabecalho__botao cabecalho__informacoes__menu">Sobre nós</button>
-      <button id="botao2" class="cabecalho__botao cabecalho__informacoes__menu">Tratamentos</button>
+    <a class="cabecalho__botao cabecalho__informacoes__menu" href="#sobreNosBotao">Sobre nós</a>
+      <a class="cabecalho__botao cabecalho__informacoes__menu" href="#tratamentosBotao">Tratamentos</button></a>
 
       <div id="btn-menu-perfil" class="btn-menu-perfil">
         <i class="bi bi-person-circle"></i>
@@ -101,7 +101,7 @@
       </section>
       <img class="imagem" src="../assets/Imagem1.jpg" alt="">
     </div>
-    <div class="divisoria">
+    <div id="sobreNosBotao" class="divisoria">
       <h1 class="divisoria__sobreNos"> Sobre Nós</h1>
     </div>
     <section class="sobreNos">
@@ -121,7 +121,7 @@
         </p>
       </div>
     </section>
-    <div class="divisoria">
+    <div id="tratamentosBotao" class="divisoria">
       <h1 class="divisoria__tratamentos">Tratamentos</h1>
     </div>
     <!-- Carrosel/Slide -->
