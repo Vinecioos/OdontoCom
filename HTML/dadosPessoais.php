@@ -124,7 +124,7 @@
             <div class="container" id="editContainer">
                 <form action="edicao.php" method="post" class="form-edit">
                     <label for="nome">Nome:</label> <br>
-                    <input placeholder="<?php
+                    <input value="<?php
                             $dbHost = "Localhost";
                             $dbUsername = "root";
                             $dbPassword = "";
@@ -152,7 +152,7 @@
                             ?>" class="input-nome" type="text" id="nome" name="nome" disabled><br>
 
                     <label for="email">Email:</label> <br>
-                    <input placeholder="<?php
+                    <input value="<?php
                             $dbHost = "Localhost";
                             $dbUsername = "root";
                             $dbPassword = "";
@@ -176,7 +176,7 @@
                             ?>" class="input-email" type="text" id="email" name="email" disabled><br>
 
                     <label for="telefone">Telefone:</label> <br>
-                    <input placeholder="<?php
+                    <input value="<?php
                             $dbHost = "Localhost";
                             $dbUsername = "root";
                             $dbPassword = "";
@@ -204,7 +204,7 @@
                             ?>" class="input-tel" type="tel" id="telefone" name="telefone" disabled><br>
 
                     <label for="cpf">CPF:</label> <br>
-                    <input placeholder="<?php
+                    <input value="<?php
                             $dbHost = "Localhost";
                             $dbUsername = "root";
                             $dbPassword = "";
