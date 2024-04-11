@@ -1,11 +1,4 @@
 
-.divisoria{
-  display: flex;
-  justify-content: center;
-  padding: 10px 20px;
-  border: solid var(--cor-texto-principal);
-  background-color: var(--cor-principal);
-}
 .divisoria__tratamentos{
 color: var(--cor-texto-principal);
 }
