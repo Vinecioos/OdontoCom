@@ -1,6 +1,5 @@
-
-.divisoria__tratamentos{
-color: var(--cor-texto-principal);
+.divisoria__tratamentos {
+  color: var(--cor-texto-principal);
 }
 
 .slider {
@@ -45,16 +44,16 @@ color: var(--cor-texto-principal);
   transition: background-color 0.2s linear;
 }
 
-#btn-1:checked ~ .slider-controls label[for="btn-1"] {
+#btn-1:checked~.slider-controls label[for="btn-1"] {
   background-color: var(--cor-carrosel);
 }
 
-#btn-2:checked ~ .slider-controls label[for="btn-2"] {
+#btn-2:checked~.slider-controls label[for="btn-2"] {
   background-color: var(--cor-carrosel);
 }
 
-#btn-3:checked ~ .slider-controls label[for="btn-3"] {
-  background-color:var(--cor-carrosel);
+#btn-3:checked~.slider-controls label[for="btn-3"] {
+  background-color: var(--cor-carrosel);
 }
 
 /* SLIDES */
@@ -108,38 +107,39 @@ color: var(--cor-texto-principal);
   max-width: 100%;
   margin-right: 5em;
   border-radius: 25%;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  ;
 }
 
 /* Slide animations */
-#btn-1:checked ~ .slides .slide:nth-child(1) {
+#btn-1:checked~.slides .slide:nth-child(1) {
   transform: translatex(0);
   opacity: 1;
 }
 
-#btn-2:checked ~ .slides .slide:nth-child(2) {
+#btn-2:checked~.slides .slide:nth-child(2) {
   transform: translatex(0);
   opacity: 1;
 }
 
-#btn-3:checked ~ .slides .slide:nth-child(3) {
+#btn-3:checked~.slides .slide:nth-child(3) {
   transform: translatex(0);
   opacity: 1;
 }
 
-#btn-1:not(:checked) ~ .slides .slide:nth-child(1) {
+#btn-1:not(:checked)~.slides .slide:nth-child(1) {
   animation-name: swap-out;
   animation-duration: 300ms;
   animation-timing-function: linear;
 }
 
-#btn-2:not(:checked) ~ .slides .slide:nth-child(2) {
+#btn-2:not(:checked)~.slides .slide:nth-child(2) {
   animation-name: swap-out;
   animation-duration: 300ms;
   animation-timing-function: linear;
 }
 
-#btn-3:not(:checked) ~ .slides .slide:nth-child(3) {
+#btn-3:not(:checked)~.slides .slide:nth-child(3) {
   animation-name: swap-out;
   animation-duration: 300ms;
   animation-timing-function: linear;
@@ -161,3 +161,38 @@ color: var(--cor-texto-principal);
   }
 }
 
+.tratamentos-mobile{
+  display: none;
+}
+
+/* RESPONSIVIDADE */
+
+@media screen and (max-width: 1200px) {
+  .slider {
+    display: none;
+  }
+  .tratamentos-mobile{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    
+  }
+  .divisoria__tratamentos {
+    font-size: 30px;
+    padding: 2%;
+  }
+  .slide-title{
+    margin: 10px 8%;
+    text-align: start;
+  }
+  .slide-text{
+    padding: 10px 6%;
+    text-align: justify;
+  }
+  .slide-image img{
+    align-self: center;
+    margin: auto;
+  }
+
+}

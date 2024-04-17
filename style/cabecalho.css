@@ -263,3 +263,29 @@ nav.nav-meus-dados ul {
 .container input[type="submit"]:disabled {
     background-color: rgb(163, 163, 163);
 }
+
+/* RESPONSIVIDADE */
+.btn-abrir-menu{
+    display: none;
+}
+.menu-mobile{
+    display: none;
+}
+
+@media screen and (max-width: 1200px){  
+
+    nav .cabecalho__informacoes__menu{
+        display: none;
+    }
+    .btn-abrir-menu{
+        display: block;
+    }
+    .cabecalho{
+        height: 12vh;
+        width: 100%;
+        position: fixed;
+    }
+
+
+
+}

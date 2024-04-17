@@ -28,3 +28,30 @@
    margin-top: 2em;
    font-size: 15px;
 }
+/* RESPONSIVIDADE */
+
+@media screen and (max-width: 1200px){  
+
+    .divisoria__sobreNos{
+        font-size: 30px;
+        padding: 2%;
+    }
+    .sobreNos{
+        margin: 8%;
+        flex-direction: column-reverse;
+        box-shadow: none;
+        justify-content: center;
+        gap: 25px;
+    }
+    .sobreNos__logo{
+        margin: 0;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+    }
+    .sobreNos__escrita{
+        margin: 0;
+        padding: 0;
+        border: 0;
+        text-align: center;
+    }
+
+}

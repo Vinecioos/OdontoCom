@@ -31,13 +31,31 @@
       <a class="cabecalho__botao cabecalho__informacoes__menu" href="#tratamentosBotao">Tratamentos</button></a>
       <a class="cabecalho__informacoes__menu" href="login.html" id="cadastro">Cadastrar/Logar</a>
     </nav>
+
+    <div class="btn-abrir-menu" id="btn-menu">
+      <i class="bi bi-list"></i>
+    </div>
+
+    <div class="menu-mobile" id="menu-mobile">
+      <div class="btn-fechar">
+        <i class="bi bi-x"></i>
+      </div>
+      <nav>
+        <ul>
+          <li><a class="cabecalho__botao cabecalho__informacoes__menu" href="#sobreNosBotao">Sobre nós</a></li>
+          <li><a class="cabecalho__botao cabecalho__informacoes__menu" href="#tratamentosBotao">Tratamentos</button></a>
+          </li>
+          <li><a class="cabecalho__informacoes__menu" href="login.html" id="cadastro">Cadastrar/Logar</a></li>
+        </ul>
+      </nav>
+    </div><!--menu-mobile-->
   </header>
   <!--FIM Cabeçalho-->
   <!--Body-->
   <main>
     <div class="container">
       <section class="container__retangulo">
-        <div>
+        <div class="container-vinicius">
           <div class="retangulo__titulo">
             <h2 class="retangulo__titulo__escrita">OdontoCom</h2>
           </div>
@@ -76,7 +94,7 @@
       <h1 class="divisoria__tratamentos">Tratamentos</h1>
     </div>
     <!-- Carrosel/Slide -->
-    <section>
+    <section class="section-tratamentos">
       <div class="slider">
         <input type="radio" name="toggle" id="btn-1" checked>
         <input type="radio" name="toggle" id="btn-2">
@@ -122,9 +140,38 @@
               <img src="../assets/Clareamento.png" alt="stuff" width="320" height="240">
             </p>
           </li>
-
         </ul>
       </div>
+
+
+      <div class="tratamentos-mobile">
+        <div class="slide-content">
+          <h2 class="slide-title">Aparelho</h2>
+          <p class="slide-text"> Aparelho dental, é um dispositivo utilizado para corrigir problemas de má oclusão
+            dentária e malformações na arcada dentária. Ele é composto por diferentes componentes, cada um
+            desempenhando um papel específico no processo de correção ortodôntica.</p>
+          <p class="slide-image">
+            <img src="../assets/Aparelho.png" alt="stuff" width="320" height="240">
+          </p>
+        </div>
+        <div class="slide-content">
+          <h2 class="slide-title">Cárie</h2>
+          <p class="slide-text">Essa desmineralização leva à formação de pequenas aberturas ou cavidades nos dentes,
+            que podem progredir e comprometer estruturas mais profundas, como a dentina e até mesmo a polpa
+            dentária, se não tratadas adequadamente!</p>
+          <p class="slide-image">
+            <img src="../assets/Carie.png" alt="stuff" width="320" height="240">
+          </p>
+        </div>
+        <div class="slide-content">
+          <h2 class="slide-title">Clareamento</h2>
+          <p class="slide-text">O clareamento dental é um procedimento odontológico popular que visa melhorar a
+            aparência estética dos dentes, tornando-os mais brancos e brilhantes. </p>
+          <p class="slide-image">
+            <img src="../assets/Clareamento.png" alt="stuff" width="320" height="240">
+          </p>
+        </div>
+      </div><!--Fim tratamentos Mobile-->
     </section>
     <!-- FIM Carrosel/Slide -->
   </main>
