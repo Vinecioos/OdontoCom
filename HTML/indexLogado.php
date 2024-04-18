@@ -1,3 +1,12 @@
+<?php
+session_start();
+$dbHost = "Localhost";
+$dbUsername = "root";
+$dbPassword = "";
+$dbName = "login";
+
+$conexao = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -44,15 +53,6 @@
         <ul>
           <li>
             <p><?php
-                session_start();
-                $dbHost = "Localhost";
-                $dbUsername = "root";
-                $dbPassword = "";
-                $dbName = "login";
-
-                $conexao = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
-
-                // Verifica se o usuário está autenticado
                 if (isset($_SESSION['email'])) {
                   $email = $_SESSION['email'];
 
@@ -71,7 +71,7 @@
                 }
                 ?></p>
           </li>
-          <li><a href="agendamentos.html">Agendamentos</a></li>
+          <li><a href="agendamentos.php">Agendamentos</a></li>
           <li><a href="dadosPessoais.php">Dados Pessoais</a></li>
           <li><a href="index.html">Sair</a></li>
         </ul>
