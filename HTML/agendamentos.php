@@ -200,14 +200,18 @@ if ($result->num_rows > 0) {
         }
 
         function addTask() {
-            const taskDate = new Date(document.getElementById('task-date').value);
-            const taskTratamento = document.getElementById('tratamento').value;
-            const taskHorario = document.getElementById('horario').value;
+            const taskDateValue = document.getElementById('task-date').value;
+            const taskTratamento = document.getElementById('tratamentos').value;
+            const taskHorario = document.getElementById('horarios').value;
             const taskDesc = document.getElementById('task-desc').value.trim();
 
-            if (taskDesc && !isNaN(taskDate.getDate())) {
-                const calendarDays = document.getElementById('calendar').children;
+            if (taskDesc && taskDateValue) {
+                const taskDate = new Date(taskDateValue);
                 const taskDay = taskDate.getDate();
+                const taskMonth = taskDate.getMonth();
+                const taskYear = taskDate.getFullYear();
+
+                const calendarDays = document.getElementById('calendar').children;
 
                 for (let i = 0; i < calendarDays.length; i++) {
                     const day = calendarDays[i];
@@ -217,11 +221,9 @@ if ($result->num_rows > 0) {
 
                         if (!isNaN(calendarDay)) {
                             console.log("Checking day:", calendarDay);
-                            console.log(taskDay);
-
-                            if (calendarDay - 1 === taskDay || taskDay === 31) {
-
-                                console.log("Found matching day:", calendarDay - 1);
+                            // Verifica se o dia, mês e ano correspondem
+                            if (calendarDay - 1 === taskDay && currentMonth === taskMonth && currentYear === taskYear) {
+                                console.log("Found matching day:", calendarDay);
 
                                 const taskElement = document.createElement("div");
                                 taskElement.className = "Consulta";
@@ -237,12 +239,13 @@ if ($result->num_rows > 0) {
                                 });
 
                                 day.appendChild(taskElement);
-                                break;
+                                closeAddTaskModal();
+                                return; // Termina a função após adicionar a tarefa
                             }
                         }
                     }
                 }
-                closeAddTaskModal();
+                alert("Date doesn't match any day in the current month.");
             } else {
                 alert("Please enter a valid date and task description!");
             }
