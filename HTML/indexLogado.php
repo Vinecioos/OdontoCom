@@ -37,7 +37,7 @@
 
     <div class="menu-perfil" id="menu-perfil">
       <div class="btn-fechar">
-        <i class="bi bi-x" id="bi bi-x"></i>
+        <i class="bi bi-x" id="bi bi-x-perfil"></i>
       </div>
 
       <nav>
