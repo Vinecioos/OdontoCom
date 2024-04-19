@@ -9,12 +9,21 @@
  color: var(--cor-texto-principal);   
 }
 
+.sobreNos__container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .sobreNos{
     display: flex;
-    margin: 5em;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
-    border-radius: 8.1% 6% 6% 8.1%;
-    margin-bottom: 8.8em;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+    width: 90%;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.7);
+    border-radius: 10%
 }
 
 .sobreNos__logo{
@@ -36,6 +45,11 @@
         font-size: 30px;
         padding: 2%;
     }
+
+    .sobreNos__container{
+        height: 100%;
+    }
+
     .sobreNos{
         margin: 8%;
         flex-direction: column-reverse;

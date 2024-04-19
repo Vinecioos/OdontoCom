@@ -49,6 +49,7 @@
     cursor: pointer;
     border-bottom: 50%;
     font-size: 25px;
+    transition: 1 ease-in;
 }
 
 /*BARRA PERFIL */
