@@ -29,7 +29,7 @@ if ($result->num_rows > 0) {
     <title>Agendamento</title>
     <link rel="stylesheet" href="../style/style.css">
     <link rel="stylesheet" href="../style/calendario.css">
-    <script src="../JavaScript/script.js" defer></script>
+    <script src="../JavaScript/scriptLogado.js" defer></script>
 </head>
 
 <body>
