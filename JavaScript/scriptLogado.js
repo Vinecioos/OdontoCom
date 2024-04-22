@@ -14,19 +14,22 @@ let senhaEditar = document.querySelector(".input-senha");
 let btnEditar = document.querySelector(".input-edit");
 let cabecalho = document.getElementById("cabecalho-secundario");
 
-/*btnMenu.addEventListener('click', ()=>{
+
+//MENU DO PERFIL E ABA PERFIL
+
+btnMenu.addEventListener('click', () => {
     menu.classList.add('abrir-menu')
 })
 
-overlay.addEventListener('click', ()=>{
+overlay.addEventListener('click', () => {
     menu.classList.remove('abrir-menu')
 })
 
-btnSair.addEventListener('click', ()=>{
+btnSair.addEventListener('click', () => {
     menu.classList.remove('abrir-menu')
 })
 
-btnHabilitaEditar.addEventListener('click', ()=>{
+btnHabilitaEditar.addEventListener('click', () => {
 
     cabecalho.innerHTML += " > Editar";
 
@@ -37,23 +40,5 @@ btnHabilitaEditar.addEventListener('click', ()=>{
     senhaEditar.removeAttribute("disabled");
     btnEditar.removeAttribute("disabled");
 
-})
-*/
-//MENU MOBILE
-
-let btnMenuMobile = document.getElementById("btn-menu-mob");
-let menuMobile = document.getElementById("menu-mobile");
-let overlayMobile = document.getElementById("overlay-menu-mob");
-
-btnMenuMobile.addEventListener('click', ()=>{
-    menuMobile.classList.add('abrir-menu-mob')
-})
-
-menuMobile.addEventListener('click', ()=>{
-    menuMobile.classList.remove('abrir-menu-mob')
-})
-
-overlayMobile.addEventListener('click', ()=>{
-    menuMobile.classList.remove('abrir-menu-mob')
 })
 
