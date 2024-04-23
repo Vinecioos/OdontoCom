@@ -52,6 +52,7 @@ btnHabilitaEditarMobile.addEventListener('click', () => {
     cpfEditar.removeAttribute("disabled");
     senhaEditar.removeAttribute("disabled");
     btnEditar.removeAttribute("disabled");
+    btnHabilitaEditarMobile.setAttribute("disabled", "disabled");
 
 })
 

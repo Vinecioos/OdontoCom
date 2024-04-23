@@ -40,7 +40,8 @@ $conexao = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
       <div id="btn-menu-perfil" class="btn-menu-perfil">
         <i class="bi bi-person-circle"></i>
         <div class="meu-perfil-central">
-          <a href="#" class="meu-perfil">Meu Perfil</a>
+          <a href="#" class="meu-perfil">Meu</a>
+          <a href="#" class="meu-perfil"> Perfil</a>
         </div>
       </div>
 

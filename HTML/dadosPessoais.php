@@ -27,7 +27,10 @@
             <a href="indexLogado.php" class="inicio">Início</a>
             <div id="btn-menu-perfil" class="btn-menu-perfil">
                 <i class="bi bi-person-circle"></i>
-                <a href="#" class="meu-perfil">Meu Perfil</a>
+                <div class="meu-perfil-central">
+                    <a href="#" class="meu-perfil">Meu</a>
+                    <a href="#" class="meu-perfil"> Perfil</a>
+                </div>
             </div>
 
         </nav>
@@ -235,7 +238,7 @@
                     <label for="password">Senha:</label> <br>
                     <input placeholder="*********" class="input-senha" type="password" id="password" name="password" disabled><br>
                     <div class="botoes">
-                        <input class="input-autoriza-edit" type="submit" id="habilita-edicao" value="Editar">
+                        <input class="input-autoriza-edit" type="button" id="habilita-edicao" value="Editar">
                         <input class="input-edit" type="submit" value="Salvar Alterações" disabled>
                     </div>
                 </form>
