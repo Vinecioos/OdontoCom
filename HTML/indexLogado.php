@@ -73,6 +73,8 @@ $conexao = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
                 }
                 ?></p>
           </li>
+          <li class="opcoes-mobile"><a class="btn-sobre-nos" href="#sobreNosBotao">Sobre nós</a></li>
+          <li class="opcoes-mobile"><a class="btn-tratamentos" href="#tratamentosBotao">Tratamentos</button></a></li>
           <li><a href="agendamentos.php">Agendamentos</a></li>
           <li><a href="dadosPessoais.php">Dados Pessoais</a></li>
           <li><a href="index.html">Sair</a></li>
@@ -88,7 +90,7 @@ $conexao = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
   <main>
     <div class="container">
       <section class="container__retangulo">
-        <div>
+        <div class="container-vinicius">
           <div class="retangulo__titulo">
             <h2 class="retangulo__titulo__escrita">OdontoCom</h2>
           </div>
@@ -106,9 +108,9 @@ $conexao = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
     <div id="sobreNosBotao" class="divisoria">
       <h1 class="divisoria__sobreNos"> Sobre Nós</h1>
     </div>
-    <section class="sobreNos">
-      <img class="sobreNos__logo" src="../assets/OdontoCom_logo1.png" alt="">
-      <div>
+    <section class="sobreNos__container">
+      <div class="sobreNos">
+        <img class="sobreNos__logo" src="../assets/OdontoCom_logo1.png" alt="">
         <p class="sobreNos__escrita">Na OdontoCom, somos mais do que uma clínica odontológica. Somos uma família
           comprometida em oferecer cuidados excepcionais aos nossos pacientes. Nossa equipe é composta por profissionais
           apaixonados pela saúde bucal e pelo bem-estar dos nossos pacientes.
@@ -176,6 +178,35 @@ $conexao = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
 
         </ul>
       </div>
+
+      <div class="tratamentos-mobile">
+        <div class="slide-content">
+          <h2 class="slide-title">Aparelho</h2>
+          <p class="slide-text"> Aparelho dental, é um dispositivo utilizado para corrigir problemas de má oclusão
+            dentária e malformações na arcada dentária. Ele é composto por diferentes componentes, cada um
+            desempenhando um papel específico no processo de correção ortodôntica.</p>
+          <p class="slide-image">
+            <img src="../assets/Aparelho.png" alt="stuff" width="320" height="240">
+          </p>
+        </div>
+        <div class="slide-content">
+          <h2 class="slide-title">Cárie</h2>
+          <p class="slide-text">Essa desmineralização leva à formação de pequenas aberturas ou cavidades nos dentes,
+            que podem progredir e comprometer estruturas mais profundas, como a dentina e até mesmo a polpa
+            dentária, se não tratadas adequadamente!</p>
+          <p class="slide-image">
+            <img src="../assets/Carie.png" alt="stuff" width="320" height="240">
+          </p>
+        </div>
+        <div class="slide-content">
+          <h2 class="slide-title">Clareamento</h2>
+          <p class="slide-text">O clareamento dental é um procedimento odontológico popular que visa melhorar a
+            aparência estética dos dentes, tornando-os mais brancos e brilhantes. </p>
+          <p class="slide-image">
+            <img src="../assets/Clareamento.png" alt="stuff" width="320" height="240">
+          </p>
+        </div>
+      </div><!--Fim tratamentos Mobile-->
     </section>
     <!-- FIM Carrosel/Slide -->
   </main>

@@ -6,6 +6,7 @@ let overlay = document.getElementById("overlay-menu");
 let btnSair = document.getElementById("bi bi-x-perfil");
 
 let btnHabilitaEditar = document.getElementById("editar-perfil");
+let btnHabilitaEditarMobile = document.getElementById("habilita-edicao");
 let nomeEditar = document.querySelector(".input-nome");
 let emailEditar = document.querySelector(".input-email");
 let telEditar = document.querySelector(".input-tel");
@@ -31,7 +32,7 @@ btnSair.addEventListener('click', () => {
 
 btnHabilitaEditar.addEventListener('click', () => {
 
-    cabecalho.innerHTML += " > Editar";
+    cabecalho.innerHTML = "Meus Dados > Editar";
 
     nomeEditar.removeAttribute("disabled");
     emailEditar.removeAttribute("disabled");
@@ -41,4 +42,17 @@ btnHabilitaEditar.addEventListener('click', () => {
     btnEditar.removeAttribute("disabled");
 
 })
+
+
+btnHabilitaEditarMobile.addEventListener('click', () => {
+
+    nomeEditar.removeAttribute("disabled");
+    emailEditar.removeAttribute("disabled");
+    telEditar.removeAttribute("disabled");
+    cpfEditar.removeAttribute("disabled");
+    senhaEditar.removeAttribute("disabled");
+    btnEditar.removeAttribute("disabled");
+
+})
+
 

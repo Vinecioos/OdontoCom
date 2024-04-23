@@ -34,7 +34,7 @@
 
         <div class="menu-perfil" id="menu-perfil">
             <div class="btn-fechar">
-                <i class="bi bi-x" id="bi bi-x"></i>
+                <i class="bi bi-x" id="bi bi-x-perfil"></i>
             </div>
 
             <nav>
@@ -68,6 +68,7 @@
                             }
                             ?></p>
                     </li>
+                    <li class="inicio-mobile"><a href="indexLogado.php">Inicio</a></li>
                     <li><a href="agendamentos.html">Agendamentos</a></li>
                     <li><a href="dadosPessoais.php">Dados Pessoais</a></li>
                     <li><a href="index.html">Sair</a></li>
@@ -87,154 +88,156 @@
         <section class="menu-lateral">
             <nav class="nav-meus-dados">
                 <p><?php
-                            $dbHost = "Localhost";
-                            $dbUsername = "root";
-                            $dbPassword = "";
-                            $dbName = "login";
+                    $dbHost = "Localhost";
+                    $dbUsername = "root";
+                    $dbPassword = "";
+                    $dbName = "login";
 
-                            $conexao = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
+                    $conexao = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
 
-                            // Verifica se o usuário está autenticado
-                            if (isset($_SESSION['email'])) {
-                                $email = $_SESSION['email'];
+                    // Verifica se o usuário está autenticado
+                    if (isset($_SESSION['email'])) {
+                        $email = $_SESSION['email'];
 
-                                // Query para buscar o nome do usuário
-                                $sql = "SELECT nome FROM user WHERE email = '$email'";
-                                $result = $conexao->query($sql);
+                        // Query para buscar o nome do usuário
+                        $sql = "SELECT nome FROM user WHERE email = '$email'";
+                        $result = $conexao->query($sql);
 
-                                // Se a consulta retornar resultados
-                                if ($result->num_rows > 0) {
-                                    $row = $result->fetch_assoc();
-                                    $nomeDoUsuario = $row['nome'];
+                        // Se a consulta retornar resultados
+                        if ($result->num_rows > 0) {
+                            $row = $result->fetch_assoc();
+                            $nomeDoUsuario = $row['nome'];
 
-                                    // Exibindo o nome do usuário
-                                    echo "Olá, $nomeDoUsuario!";
-                                }
-                            }
-                            ?></p>
+                            // Exibindo o nome do usuário
+                            echo "Olá, $nomeDoUsuario!";
+                        }
+                    }
+                    ?></p>
                 <p>Seja bem-vindo à sua conta!</p>
                 <ul>
                     <li><a id="editar-perfil" href="#">Editar Perfil</a></li>
                     <li><a href="indexLogado.php">Voltar para a página principal</a></li>
                     <li><a href="#">Sair</a></li>
                 </ul>
-            </nav>
-        </section><!--FIM NAV Meus Dados-->
+            </nav><!--FIM NAV Meus Dados -->
+        </section><!-- FIM MENU LATERAL -->
         <section class="conteudo">
             <div class="container" id="editContainer">
                 <form action="edicao.php" method="post" class="form-edit">
                     <label for="nome">Nome:</label> <br>
                     <input value="<?php
-                            $dbHost = "Localhost";
-                            $dbUsername = "root";
-                            $dbPassword = "";
-                            $dbName = "login";
+                                    $dbHost = "Localhost";
+                                    $dbUsername = "root";
+                                    $dbPassword = "";
+                                    $dbName = "login";
 
-                            $conexao = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
+                                    $conexao = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
 
-                            // Verifica se o usuário está autenticado
-                            if (isset($_SESSION['email'])) {
-                                $email = $_SESSION['email'];
+                                    // Verifica se o usuário está autenticado
+                                    if (isset($_SESSION['email'])) {
+                                        $email = $_SESSION['email'];
 
-                                // Query para buscar o nome do usuário
-                                $sql = "SELECT nome FROM user WHERE email = '$email'";
-                                $result = $conexao->query($sql);
+                                        // Query para buscar o nome do usuário
+                                        $sql = "SELECT nome FROM user WHERE email = '$email'";
+                                        $result = $conexao->query($sql);
 
-                                // Se a consulta retornar resultados
-                                if ($result->num_rows > 0) {
-                                    $row = $result->fetch_assoc();
-                                    $nomeDoUsuario = $row['nome'];
+                                        // Se a consulta retornar resultados
+                                        if ($result->num_rows > 0) {
+                                            $row = $result->fetch_assoc();
+                                            $nomeDoUsuario = $row['nome'];
 
-                                    // Exibindo o nome do usuário
-                                    echo "$nomeDoUsuario";
-                                }
-                            }
-                            ?>" class="input-nome" type="text" id="nome" name="nome" disabled><br>
+                                            // Exibindo o nome do usuário
+                                            echo "$nomeDoUsuario";
+                                        }
+                                    }
+                                    ?>" class="input-nome" type="text" id="nome" name="nome" disabled><br>
 
                     <label for="email">Email:</label> <br>
                     <input value="<?php
-                            $dbHost = "Localhost";
-                            $dbUsername = "root";
-                            $dbPassword = "";
-                            $dbName = "login";
+                                    $dbHost = "Localhost";
+                                    $dbUsername = "root";
+                                    $dbPassword = "";
+                                    $dbName = "login";
 
-                            $conexao = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
+                                    $conexao = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
 
-                            // Verifica se o usuário está autenticado
-                            if (isset($_SESSION['email'])) {
-                                $email = $_SESSION['email'];
+                                    // Verifica se o usuário está autenticado
+                                    if (isset($_SESSION['email'])) {
+                                        $email = $_SESSION['email'];
 
-                                // Query para buscar o nome do usuário
-                                $sql = "SELECT nome FROM user WHERE email = '$email'";
-                                $result = $conexao->query($sql);
+                                        // Query para buscar o nome do usuário
+                                        $sql = "SELECT nome FROM user WHERE email = '$email'";
+                                        $result = $conexao->query($sql);
 
-                                // Se a consulta retornar resultados
-                                if ($result->num_rows > 0) {
-                                    echo "$email";
-                                }
-                            }
-                            ?>" class="input-email" type="text" id="email" name="email" disabled><br>
+                                        // Se a consulta retornar resultados
+                                        if ($result->num_rows > 0) {
+                                            echo "$email";
+                                        }
+                                    }
+                                    ?>" class="input-email" type="text" id="email" name="email" disabled><br>
 
                     <label for="telefone">Telefone:</label> <br>
                     <input value="<?php
-                            $dbHost = "Localhost";
-                            $dbUsername = "root";
-                            $dbPassword = "";
-                            $dbName = "login";
+                                    $dbHost = "Localhost";
+                                    $dbUsername = "root";
+                                    $dbPassword = "";
+                                    $dbName = "login";
 
-                            $conexao = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
+                                    $conexao = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
 
-                            // Verifica se o usuário está autenticado
-                            if (isset($_SESSION['email'])) {
-                                $email = $_SESSION['email'];
+                                    // Verifica se o usuário está autenticado
+                                    if (isset($_SESSION['email'])) {
+                                        $email = $_SESSION['email'];
 
-                                // Query para buscar o nome do usuário
-                                $sql = "SELECT telefone FROM user WHERE email = '$email'";
-                                $result = $conexao->query($sql);
+                                        // Query para buscar o nome do usuário
+                                        $sql = "SELECT telefone FROM user WHERE email = '$email'";
+                                        $result = $conexao->query($sql);
 
-                                // Se a consulta retornar resultados
-                                if ($result->num_rows > 0) {
-                                    $row = $result->fetch_assoc();
-                                    $telDoUsuario = $row['telefone'];
+                                        // Se a consulta retornar resultados
+                                        if ($result->num_rows > 0) {
+                                            $row = $result->fetch_assoc();
+                                            $telDoUsuario = $row['telefone'];
 
-                                    // Exibindo o nome do usuário
-                                    echo "$telDoUsuario";
-                                }
-                            }
-                            ?>" class="input-tel" type="tel" id="telefone" name="telefone" disabled><br>
+                                            // Exibindo o nome do usuário
+                                            echo "$telDoUsuario";
+                                        }
+                                    }
+                                    ?>" class="input-tel" type="tel" id="telefone" name="telefone" disabled><br>
 
                     <label for="cpf">CPF:</label> <br>
                     <input value="<?php
-                            $dbHost = "Localhost";
-                            $dbUsername = "root";
-                            $dbPassword = "";
-                            $dbName = "login";
+                                    $dbHost = "Localhost";
+                                    $dbUsername = "root";
+                                    $dbPassword = "";
+                                    $dbName = "login";
 
-                            $conexao = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
+                                    $conexao = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
 
-                            // Verifica se o usuário está autenticado
-                            if (isset($_SESSION['email'])) {
-                                $email = $_SESSION['email'];
+                                    // Verifica se o usuário está autenticado
+                                    if (isset($_SESSION['email'])) {
+                                        $email = $_SESSION['email'];
 
-                                // Query para buscar o nome do usuário
-                                $sql = "SELECT CPF FROM user WHERE email = '$email'";
-                                $result = $conexao->query($sql);
+                                        // Query para buscar o nome do usuário
+                                        $sql = "SELECT CPF FROM user WHERE email = '$email'";
+                                        $result = $conexao->query($sql);
 
-                                // Se a consulta retornar resultados
-                                if ($result->num_rows > 0) {
-                                    $row = $result->fetch_assoc();
-                                    $CPFDoUsuario = $row['CPF'];
+                                        // Se a consulta retornar resultados
+                                        if ($result->num_rows > 0) {
+                                            $row = $result->fetch_assoc();
+                                            $CPFDoUsuario = $row['CPF'];
 
-                                    // Exibindo o nome do usuário
-                                    echo "$CPFDoUsuario";
-                                }
-                            }
-                            ?>" class="input-cpf" type="text" id="cpf" name="cpf" disabled><br>
+                                            // Exibindo o nome do usuário
+                                            echo "$CPFDoUsuario";
+                                        }
+                                    }
+                                    ?>" class="input-cpf" type="text" id="cpf" name="cpf" disabled><br>
 
                     <label for="password">Senha:</label> <br>
                     <input placeholder="*********" class="input-senha" type="password" id="password" name="password" disabled><br>
-
-                    <input class="input-edit" type="submit" value="Salvar Alterações" disabled>
+                    <div class="botoes">
+                        <input class="input-autoriza-edit" type="submit" id="habilita-edicao" value="Editar">
+                        <input class="input-edit" type="submit" value="Salvar Alterações" disabled>
+                    </div>
                 </form>
             </div>
         </section>
