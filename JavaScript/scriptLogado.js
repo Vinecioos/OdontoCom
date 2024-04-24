@@ -13,7 +13,6 @@ let telEditar = document.querySelector(".input-tel");
 let cpfEditar = document.querySelector(".input-cpf");
 let senhaEditar = document.querySelector(".input-senha");
 let btnEditar = document.querySelector(".input-edit");
-let cabecalho = document.getElementById("cabecalho-secundario");
 
 
 //MENU DO PERFIL E ABA PERFIL
@@ -31,8 +30,6 @@ btnSair.addEventListener('click', () => {
 })
 
 btnHabilitaEditar.addEventListener('click', () => {
-
-    cabecalho.innerHTML = "Meus Dados > Editar";
 
     nomeEditar.removeAttribute("disabled");
     emailEditar.removeAttribute("disabled");

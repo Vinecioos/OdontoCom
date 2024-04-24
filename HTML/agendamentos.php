@@ -58,7 +58,7 @@ if ($result->num_rows > 0) {
 
         <div class="menu-perfil" id="menu-perfil">
             <div class="btn-fechar">
-                <i class="bi bi-x" id="bi bi-x"></i>
+                <i class="bi bi-x" id="bi bi-x-perfil"></i>
             </div>
 
             <nav>
@@ -222,6 +222,12 @@ if ($result->num_rows > 0) {
             </form>
         </div>
     </div>
+    <footer>
+        <div class="rodape">
+            <a class="rodape__escrita" href="ByTech.html">&copy; Criado por ByTech</a>
+        </div>
+    </footer>
+    <!--Fim Rodapé-->
     <script>
         let currentMonth = new Date().getMonth();
         let currentYear = new Date().getFullYear();

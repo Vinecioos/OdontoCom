@@ -168,24 +168,6 @@
     display: none;
 }
 
-/*CABEÇALHO SECUNDARIO PERFIL*/
-
-.cabecalho-secundario {
-    background-color: var(--cor-secundaria);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: auto;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
-}
-
-.cabecalho-secundario a {
-    font-size: 24px;
-    padding: 10px 20%;
-    color: #fff;
-    text-decoration: underline;
-}
-
 /*barra lateral perfil*/
 
 .nav-meus-dados {
@@ -339,7 +321,7 @@ nav.nav-meus-dados ul {
 }
 
 .menu-mobile nav ul {
-    text-align: right;
+    text-align: left;
 
 }
 
@@ -348,7 +330,7 @@ nav.nav-meus-dados ul {
     color: #fff;
     font-size: 20px;
     font-weight: 300;
-    padding: 20px 8%;
+    padding: 20px 12%;
     display: block;
 }
 
@@ -443,7 +425,7 @@ nav.nav-meus-dados ul {
 
     .conteudo {
         padding: 5px 4%;
-        margin-top: 8vh;
+        margin-top: 14vh;
         width: 80%;
     }
 

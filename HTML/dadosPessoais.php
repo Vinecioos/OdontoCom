@@ -83,10 +83,6 @@
 
     </header>
     <!--FIM Cabeçalho-->
-    <div class="cabecalho-secundario">
-        <a id="cabecalho-secundario" href="#">Meus Dados</a>
-    </div>
-    <!--FIM Cabeçalho Secundário-->
     <main class="main-dados-pessoais">
         <section class="menu-lateral">
             <nav class="nav-meus-dados">

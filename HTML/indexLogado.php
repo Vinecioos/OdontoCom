@@ -210,6 +210,9 @@ $conexao = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
       </div><!--Fim tratamentos Mobile-->
     </section>
     <!-- FIM Carrosel/Slide -->
+    <div class="botao__container">
+      <a class="botao__retorno" href="#">&#9650</a>
+    </div>
   </main>
   <!-- FIM Body-->
   <!--Rodapé-->
