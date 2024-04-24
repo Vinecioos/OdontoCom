@@ -433,9 +433,38 @@ img{
     margin-bottom: 5px;
 }
 
+#nextMonth,
+#prevMonth{
+    position: fixed;
+}
+
+#prevMonth{
+    left: 470px;
+    top: 162px;
+}
+
+#nextMonth{
+    right: 470px;
+    top: 162px;
+}
+
+
 
 
 @media screen and (max-width: 1200px) {
+    .txt_Consulta{
+        margin-top: 100px;
+    }
+
+    #prevMonth{
+        left: 47px;
+        top: 155px;
+    }
+    
+    #nextMonth{
+        right: 47px;
+        top: 155px;
+    }
     
     .calendar-grid{
         grid-template-columns: repeat(5, 1fr);

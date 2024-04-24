@@ -72,7 +72,7 @@
                             ?></p>
                     </li>
                     <li class="inicio-mobile"><a href="indexLogado.php">Inicio</a></li>
-                    <li><a href="agendamentos.html">Agendamentos</a></li>
+                    <li><a href="agendamentos.php">Agendamentos</a></li>
                     <li><a href="dadosPessoais.php">Dados Pessoais</a></li>
                     <li><a href="index.html">Sair</a></li>
                 </ul>

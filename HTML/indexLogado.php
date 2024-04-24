@@ -101,7 +101,7 @@ $conexao = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
             odontológicos
             com excelência, garantindo sua saúde bucal e a beleza do seu sorriso.
           </p>
-          <a class="retangulo__botao" href="">Agendar Consulta</a>
+          <a class="retangulo__botao" href="../HTML/agendamentos.php">Agendar Consulta</a>
         </div>
       </section>
       <img class="imagem" src="../assets/Imagem1.jpg" alt="">

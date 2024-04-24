@@ -80,7 +80,7 @@ if ($result->num_rows > 0) {
                             }
                             ?></p>
                     </li>
-                    <li><a href="agendamentos.html">Agendamentos</a></li>
+                    <li><a href="agendamentos.php">Agendamentos</a></li>
                     <li><a href="dadosPessoais.php">Dados Pessoais</a></li>
                     <li><a href="index.html">Sair</a></li>
                 </ul>
@@ -91,7 +91,7 @@ if ($result->num_rows > 0) {
     </header>
 
     <div class="planner">
-        <h1>Marcar Consulta</h1>
+        <h1 class="txt_Consulta">Marcar Consulta</h1>
         <div class="calendar-header">
             <button id="prevMonth">&lt;</button>
             <h2 id="currentMonth">Abril</h2>
