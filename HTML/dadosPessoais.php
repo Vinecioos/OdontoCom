@@ -116,7 +116,7 @@
                 <ul>
                     <li><a id="editar-perfil" href="#">Editar Perfil</a></li>
                     <li><a href="indexLogado.php">Voltar para a página principal</a></li>
-                    <li><a href="#">Sair</a></li>
+                    <li><a href="index.html">Sair</a></li>
                 </ul>
             </nav><!--FIM NAV Meus Dados -->
         </section><!-- FIM MENU LATERAL -->
@@ -149,7 +149,7 @@
                                             echo "$nomeDoUsuario";
                                         }
                                     }
-                                    ?>" class="input-nome" type="text" id="nome" name="nome" disabled><br>
+                                    ?>" class="input-nome" type="text" id="nome" name="nome" required disabled><br>
 
                     <label for="email">Email:</label> <br>
                     <input value="<?php
@@ -173,7 +173,7 @@
                                             echo "$email";
                                         }
                                     }
-                                    ?>" class="input-email" type="text" id="email" name="email" disabled><br>
+                                    ?>" class="input-email" type="text" id="email" name="email" required disabled><br>
 
                     <label for="telefone">Telefone:</label> <br>
                     <input value="<?php
@@ -201,7 +201,7 @@
                                             echo "$telDoUsuario";
                                         }
                                     }
-                                    ?>" class="input-tel" type="tel" id="telefone" name="telefone" disabled><br>
+                                    ?>" class="input-tel" type="tel" id="telefone" name="telefone" required disabled><br>
 
                     <label for="cpf">CPF:</label> <br>
                     <input value="<?php
@@ -229,10 +229,10 @@
                                             echo "$CPFDoUsuario";
                                         }
                                     }
-                                    ?>" class="input-cpf" type="text" id="cpf" name="cpf" disabled><br>
+                                    ?>" class="input-cpf" type="text" id="cpf" name="cpf" required disabled><br>
 
                     <label for="password">Senha:</label> <br>
-                    <input placeholder="*********" class="input-senha" type="password" id="password" name="password" disabled><br>
+                    <input placeholder="*********" class="input-senha" type="password" id="password" name="password" required disabled><br>
                     <div class="botoes">
                         <input class="input-autoriza-edit" type="button" id="habilita-edicao" value="Editar">
                         <input class="input-edit" type="submit" value="Salvar Alterações" disabled>
