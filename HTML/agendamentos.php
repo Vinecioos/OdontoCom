@@ -18,6 +18,29 @@ if ($result->num_rows > 0) {
         $options .= "<option value='{$horaDisponivel}'>{$horaDisponivel}</option>";
     }
 }
+
+if (isset($_SESSION['email'])) {
+    $email = $_SESSION['email'];
+
+    $queryEmails  = "SELECT datas, horario, tratamento FROM consultas WHERE email_cliente = '$email'";
+    $resultEmails = $conexao->query($queryEmails);
+
+
+    $emails = [];
+
+    if ($resultEmails->num_rows > 0) {
+        while ($row = $resultEmails->fetch_assoc()) {
+            $email = [
+                "data" => $row["datas"],
+                "tratamento" => $row["tratamento"],
+                "horario" => $row["horario"]
+            ];
+            $emails[] = $email;
+        }
+    }
+
+    $emails_json = json_encode($emails);
+}
 ?>
 
 <!DOCTYPE html>
@@ -106,16 +129,16 @@ if ($result->num_rows > 0) {
         <div class="modal-content">
             <span class="close" onclick="closeAddTaskModal()">&times;</span>
             <h2>Agendar Consulta</h2>
-            <input type="date" id="task-date">
-            <select id="tratamentos">
+            <input type="date" id="task-date" name="task-date">
+            <select id="tratamentos" name="tratamentos">
                 <option value="Clareamento">Clareamento</option>
                 <option value="Ortodontia">Ortodontia</option>
                 <option value="Canal">Canal</option>
             </select>
-            <select id="horarios">
+            <select id="horarios" name="horarios">
                 <?php echo $options; ?>
             </select>
-            <input type="text" id="task-desc" placeholder="Comentário" autocomplete="off">
+            <input type="text" id="task-desc" name="task-desc" placeholder="Comentário" autocomplete="off">
             <button id="addTaskButton" onclick="showPaymentModal()">Marcar</button>
         </div>
     </div>
@@ -177,7 +200,7 @@ if ($result->num_rows > 0) {
                 </div>
             </div>
             <div class="align_btn">
-                <button class="Btn" onclick="addTask()">
+                <button class="Btn" onclick="marcar_agenda()">
                     Pagar
                     <svg class="svgIcon" viewBox="0 0 576 512">
                         <path d="M512 80c8.8 0 16 7.2 16 16v32H48V96c0-8.8 7.2-16 16-16H512zm16 144V416c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V224H528zM64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm56 304c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24H120zm128 0c-13.3 0-24 10.7-24 24s10.7 24 24 24H360c13.3 0 24-10.7 24-24s-10.7-24-24-24H248z"></path>
@@ -217,7 +240,7 @@ if ($result->num_rows > 0) {
                     </select>
                 </div>
                 <div class="align_btn">
-                    <button class="Btn" onclick="addTask()">Pagar</button>
+                    <button class="Btn" onclick="marcar_agenda()">Pagar</button>
                 </div>
             </form>
         </div>
@@ -289,6 +312,17 @@ if ($result->num_rows > 0) {
                 daySquare.id = `day-${day}`;
                 calendar.appendChild(daySquare);
             }
+
+            const emails = <?php echo $emails_json; ?>;
+            emails.forEach(email => {
+                const emailDate = new Date(email.data + "T00:00:00");
+                const emailMonth = emailDate.getMonth();
+                const emailYear = emailDate.getFullYear();
+
+                if (emailMonth === month && emailYear === year) {
+                    addTask(email.data, email.tratamento, email.horario);
+                }
+            });
         }
 
         function showAddTaskModal() {
@@ -343,59 +377,70 @@ if ($result->num_rows > 0) {
             }
         }
 
-        function addTask() {
+        function addTask(date, tramamento, horario) {
             closePaymentModal();
             closePixModal();
             closeCreditoModal();
-            const taskDateValue = document.getElementById('task-date').value;
-            const taskTratamento = document.getElementById('tratamentos').value;
-            const taskHorario = document.getElementById('horarios').value;
-            const taskDesc = document.getElementById('task-desc').value.trim();
+            const taskDate = new Date(date + "T00:00:00");
+            const taskDay = taskDate.getDate();
+            const taskMonth = taskDate.getMonth();
+            const taskYear = taskDate.getFullYear();
 
-            if (taskDesc && taskDateValue) {
-                const taskDate = new Date(taskDateValue + "T00:00:00");
-                const taskDay = taskDate.getDate();
-                const taskMonth = taskDate.getMonth();
-                const taskYear = taskDate.getFullYear();
+            const calendarDays = document.getElementById('calendar').children;
 
-                const calendarDays = document.getElementById('calendar').children;
+            for (let i = 0; i < calendarDays.length; i++) {
+                const day = calendarDays[i];
 
-                for (let i = 0; i < calendarDays.length; i++) {
-                    const day = calendarDays[i];
+                if (day.tagName === 'BUTTON') {
+                    const calendarDay = parseInt(day.textContent);
 
-                    if (day.tagName === 'BUTTON') {
-                        const calendarDay = parseInt(day.textContent);
+                    if (!isNaN(calendarDay)) {
+                        console.log("Checking day:", calendarDay);
+                        // Verifica se o dia, mês e ano correspondem
+                        if (calendarDay === taskDay && currentMonth === taskMonth && currentYear === taskYear) {
+                            const taskElement = document.createElement("div");
+                            taskElement.className = "Consulta";
+                            taskElement.textContent = tramamento + " | " + horario;
 
-                        if (!isNaN(calendarDay)) {
-                            console.log("Checking day:", calendarDay);
-                            // Verifica se o dia, mês e ano correspondem
-                            if (calendarDay === taskDay && currentMonth === taskMonth && currentYear === taskYear) {
-                                console.log("Found matching day:", calendarDay);
+                            taskElement.addEventListener("contextmenu", function(event) {
+                                event.preventDefault();
+                                deleteTask(taskElement);
+                            });
 
-                                const taskElement = document.createElement("div");
-                                taskElement.className = "Consulta";
-                                taskElement.textContent = taskTratamento + " | " + taskHorario;
+                            taskElement.addEventListener('click', function() {
+                                editTask(taskElement);
+                            });
 
-                                taskElement.addEventListener("contextmenu", function(event) {
-                                    event.preventDefault();
-                                    deleteTask(taskElement);
-                                });
-
-                                taskElement.addEventListener('click', function() {
-                                    editTask(taskElement);
-                                });
-
-                                day.appendChild(taskElement);
-                                closeAddTaskModal();
-                                return; // Termina a função após adicionar a tarefa
-                            }
+                            day.appendChild(taskElement);
+                            closeAddTaskModal();
+                            return;
                         }
                     }
                 }
-                alert("Date doesn't match any day in the current month.");
-            } else {
-                alert("Please enter a valid date and task description!");
             }
+        }
+
+        function marcar_agenda() {
+            const taskDateValue = document.getElementById('task-date').value;
+            const taskTratamento = document.getElementById('tratamentos').value;
+            const taskHorario = document.getElementById('horarios').value;
+            const taskDesc = document.getElementById('task-desc').value;
+            
+            fetch('save_consulta.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    body: 'task-date=' + encodeURIComponent(taskDateValue) +
+                        '&tratamentos=' + encodeURIComponent(taskTratamento) +
+                        '&horarios=' + encodeURIComponent(taskHorario) +
+                        '&task-desc=' + encodeURIComponent(taskDesc)
+                })
+                .then(response => response.text());
+
+                alert("Consulta Marcada com sucesso!");
+                window.location = "agendamentos.php";
+
         }
     </script>
 </body>
