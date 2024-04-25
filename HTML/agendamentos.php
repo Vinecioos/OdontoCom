@@ -353,7 +353,7 @@ if ($result->num_rows > 0) {
             const taskDesc = document.getElementById('task-desc').value.trim();
 
             if (taskDesc && taskDateValue) {
-                const taskDate = new Date(taskDateValue);
+                const taskDate = new Date(taskDateValue + "T00:00:00");
                 const taskDay = taskDate.getDate();
                 const taskMonth = taskDate.getMonth();
                 const taskYear = taskDate.getFullYear();
@@ -369,7 +369,7 @@ if ($result->num_rows > 0) {
                         if (!isNaN(calendarDay)) {
                             console.log("Checking day:", calendarDay);
                             // Verifica se o dia, mês e ano correspondem
-                            if (calendarDay - 1 === taskDay && currentMonth === taskMonth && currentYear === taskYear) {
+                            if (calendarDay === taskDay && currentMonth === taskMonth && currentYear === taskYear) {
                                 console.log("Found matching day:", calendarDay);
 
                                 const taskElement = document.createElement("div");

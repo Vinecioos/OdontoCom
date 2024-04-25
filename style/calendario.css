@@ -435,7 +435,7 @@ img{
 
 #nextMonth,
 #prevMonth{
-    position: fixed;
+    position: absolute;
 }
 
 #prevMonth{
