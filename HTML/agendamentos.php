@@ -402,15 +402,6 @@ if (isset($_SESSION['email'])) {
                             taskElement.className = "Consulta";
                             taskElement.textContent = tramamento + " | " + horario;
 
-                            taskElement.addEventListener("contextmenu", function(event) {
-                                event.preventDefault();
-                                deleteTask(taskElement);
-                            });
-
-                            taskElement.addEventListener('click', function() {
-                                editTask(taskElement);
-                            });
-
                             day.appendChild(taskElement);
                             closeAddTaskModal();
                             return;
@@ -425,7 +416,7 @@ if (isset($_SESSION['email'])) {
             const taskTratamento = document.getElementById('tratamentos').value;
             const taskHorario = document.getElementById('horarios').value;
             const taskDesc = document.getElementById('task-desc').value;
-            
+
             fetch('save_consulta.php', {
                     method: 'POST',
                     headers: {
@@ -436,11 +427,9 @@ if (isset($_SESSION['email'])) {
                         '&horarios=' + encodeURIComponent(taskHorario) +
                         '&task-desc=' + encodeURIComponent(taskDesc)
                 })
-                .then(response => response.text());
-
-                alert("Consulta Marcada com sucesso!");
-                window.location = "agendamentos.php";
-
+                .then(response => response.text())
+                
+                window.location.href = "agendamentos.php";
         }
     </script>
 </body>
