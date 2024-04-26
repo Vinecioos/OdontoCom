@@ -24,7 +24,7 @@ $row = $resultadoVerificacao->fetch_assoc();
 $totalConsultas = $row['total'];
 
 if ($totalConsultas > 0) {
-    echo json_encode(["status" => "error"]);
+    echo "Erro: Já existe uma consulta agendada para esta data e horário.";
     exit;
 }
 

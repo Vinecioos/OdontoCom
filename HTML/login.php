@@ -21,7 +21,8 @@
         if(mysqli_num_rows($result) < 1){
             unset($_SESSION['email']);
             unset($_SESSION['password']);
-            header('Location: login.html');
+            echo "<script>alert('Email ou senha incorreta! Tente novamente.');";
+            echo "window.location='login.html';</script>";
         }
         else{
             $_SESSION['email'] = $email;

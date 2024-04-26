@@ -421,18 +421,9 @@ img{
 
 .QRCode img{
     width: 200px;
+    padding: 10px;
 }
 
-.media-body{
-    width: 350px;
-}
-
-.media-heading{
-    font-size: 14px;
-    font-weight: 400;
-    margin-top: 0;
-    margin-bottom: 5px;
-}
 
 #nextMonth,
 #prevMonth{

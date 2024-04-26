@@ -188,16 +188,13 @@ if (isset($_SESSION['email'])) {
             <span class="close" onclick="closePixModal()" style="align-self: end">&times;</span>
             <div class="title">
                 <h4><span style="color: #45a049">Pague</span> Pelo QRCode</h4>
+                <p class="text-large" hidden>00020126490014BR.GOV.BCB.PIX0127guilhermelibanio1@gmail.com5204000053039865406149.945802BR5925Guilherme Libanio De Oliv6009SAO PAULO62140510PKJzVMpdUn6304F5BD</p>
             </div>
             <div class="QRCode">
-                <img src="data:image/png;base64,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" alt="">
+                <img src="../assets/QRcode.png" alt="">
             </div>
-            <div class="media">
-                <div class="media-body">
-                    <h2 class="media-heading text-regular text-medium text-muted">Chave Pix</h2>
-                    <p class="text-large" style="word-break:break-word;">4831c103-4fb7-4228-a730-a51852852ff0</p>
-                    <input type="hidden" id="copy-pix-key" readonly="" onclick="this.focus();this.select();" value="4831c103-4fb7-4228-a730-a51852852ff0">
-                </div>
+            <div class="align_btn">
+                <button class="Btn" onclick="copyCode()">Copiar Código</button>
             </div>
             <div class="align_btn">
                 <button class="Btn" onclick="marcar_agenda()">
@@ -428,9 +425,31 @@ if (isset($_SESSION['email'])) {
                         '&task-desc=' + encodeURIComponent(taskDesc)
                 })
                 .then(response => response.text())
-                
-                window.location.href = "agendamentos.php";
-        }
+                .then(data => {
+                        if (data.startsWith("Erro")) {
+                            alert(data); 
+                        }
+                    });
+
+                        window.location = "agendamentos.php";
+                    }
+
+                    /* Copiar codigo */
+
+                    function copyCode() {
+                        const codeElement = document.querySelector('.text-large');
+                        const codeText = codeElement.innerText || codeElement.textContent;
+
+                        const textarea = document.createElement('textarea');
+                        textarea.value = codeText;
+                        document.body.appendChild(textarea);
+
+                        textarea.select();
+                        document.execCommand('copy');
+
+                        document.body.removeChild(textarea);
+                        alert('Código copiado para a área de transferência!');
+                    }
     </script>
 </body>
 
