@@ -28,6 +28,11 @@ if ($totalConsultas > 0) {
     exit;
 }
 
+if (strtotime($taskDateValue) < strtotime(date('Y-m-d'))) {
+    echo "Erro: Você não pode agendar uma consulta para uma data anterior à atual.";
+    exit;
+}
+
 $sql = "INSERT INTO consultas (datas, horario, tratamento, descricao, email_cliente) 
         VALUES (?, ?, ?, ?, ?)";
 
