@@ -251,6 +251,8 @@ if (isset($_SESSION['email'])) {
     <script>
         let currentMonth = new Date().getMonth();
         let currentYear = new Date().getFullYear();
+        let selectedMonth = currentMonth;
+        let selectedYear = currentYear;
 
         window.onload = function() {
             generateCalendar(currentMonth, currentYear);
@@ -262,6 +264,8 @@ if (isset($_SESSION['email'])) {
                     currentMonth = 11;
                     currentYear--;
                 }
+                selectedMonth = currentMonth;
+                selectedYear = currentYear;
                 generateCalendar(currentMonth, currentYear);
                 updateMonthYear();
             });
@@ -272,6 +276,8 @@ if (isset($_SESSION['email'])) {
                     currentMonth = 0;
                     currentYear++;
                 }
+                selectedMonth = currentMonth;
+                selectedYear = currentYear;
                 generateCalendar(currentMonth, currentYear);
                 updateMonthYear();
             });
@@ -325,9 +331,8 @@ if (isset($_SESSION['email'])) {
         function showAddTaskModal() {
             const selectedDay = this.textContent;
             const currentDate = new Date();
-            const currentYear = currentDate.getFullYear();
-            const currentMonth = currentDate.getMonth() + 1;
-            const formattedDate = `${currentYear}-${currentMonth.toString().padStart(2, '0')}-${selectedDay.toString().padStart(2, '0')}`;
+            selectedMonth++;
+            const formattedDate = `${selectedYear}-${selectedMonth.toString().padStart(2, '0')}-${selectedDay.toString().padStart(2, '0')}`;
 
             document.getElementById('task-date').value = formattedDate;
             document.getElementById('addTaskModal').style.display = 'block';

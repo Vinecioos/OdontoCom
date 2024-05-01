@@ -17,7 +17,7 @@ $email = $_SESSION["email"];
 // Verificação de consulta existente
 $verificaConsulta = "SELECT COUNT(*) as total FROM consultas WHERE datas = ? AND horario = ?";
 $stmtVerifica = $conexao->prepare($verificaConsulta);
-$stmtVerifica->bind_param("ss", $taskDateValue, $taskHorario);  // Corrigido para "ss"
+$stmtVerifica->bind_param("ss", $taskDateValue, $taskHorario); 
 $stmtVerifica->execute();
 $resultadoVerificacao = $stmtVerifica->get_result();
 $row = $resultadoVerificacao->fetch_assoc();
