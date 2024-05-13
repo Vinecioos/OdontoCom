@@ -1,0 +1,154 @@
+main{
+    display: flex;
+    height: 100vh;
+    background-color: rgb(211, 211, 211);
+}
+
+
+.nav__administrador__container{
+    background: #289A6BD4;
+    width: 235px;
+}
+
+.nav__div__conatiner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 12px;
+    gap: 20px;
+}
+
+.div__administrador{
+    padding: 5px 71px 0 0;
+    color: var(--cor-texto-principal);
+}
+
+.administrador__titulo{
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.editarPerfil{
+    color: var(--cor-texto-principal);
+    font-size: 10px;
+}
+
+h3{
+    font-size: 12px;
+    font-weight: 700;
+    margin: 22px 0 22px 17px;
+    color: var(--cor-texto-principal);
+    opacity: 50%;
+}
+
+.links__container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.links__opcoes{
+    display: flex;
+    align-items: center;
+    width: 236px;
+    height: 43px;
+    font-size: 12px;
+}
+
+.links__opcoes:hover{
+    background-color:#238B60;
+    ;
+}
+
+.links__imagem{
+    padding:  0 24px 0 41px;
+    width: 16px;
+    height: 16px;
+}
+
+.links__escrita{
+    color: var(--cor-texto-principal);
+    text-decoration: none;
+}
+
+.usuario__container{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+}
+
+.div__usuarios{
+    background-color: white;
+    box-shadow: 0 0px 4px rgba(0, 0, 0, 0.6);
+    padding: 13px 27px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+}
+
+.div__input__container{
+    background-color: white;
+    box-shadow: 0 0px 4px rgba(0, 0, 0, 0.6);
+    height: 135px;
+    margin: 20px;
+}
+
+.div__input{
+    display: flex;
+    margin: 25px 35px; /* Valor original 25px 26px*/
+}
+
+.input{
+    display: flex;
+    flex-direction: column;
+    width: 227px;
+    padding-right: 40px; /* Valor Original 33px */
+}
+
+.input__telefone__cpf{
+    width: 125px;   /* Valor original 113px */
+}
+
+.div__botao{
+    display: flex;
+    justify-content: end;
+    margin: 21px;
+}
+.botao{
+    background: #4CAF50;
+    color: var(--cor-texto-principal);
+    width: 93px;
+    height: 24px;
+    border: none;
+    cursor: pointer;
+}
+
+.botao__icon{
+    padding-right: 10px;
+    color: white;
+}
+
+.tabela__container{
+    background-color: white;
+    box-shadow: 0 0px 4px rgba(0, 0, 0, 0.6);
+    height: 100vh;
+    margin: 0 20px 20px 20px;
+}
+
+.div__botao__novoUsuario{
+    display: flex;
+    margin: 15px;
+}
+
+.botao__novoUsuario{
+    width: 140px;
+    height: 24px;
+    padding: 5px;
+}
+
+.tabela{
+    background-color: rgb(247, 247, 255);
+    height: 55vh;
+    margin: 15px;
+}
