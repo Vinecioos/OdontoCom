@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style/style.css" />
+    <link rel="stylesheet" href="../style/calendario.css" />
+    <link
+      rel="shortcut icon"
+      href="../assets/LogoFav.PNG"
+      type="image/x-icon"
+    />
+    <title>Consultas</title>
+    <style>
+      #prevMonth {
+        left: 600px;
+        top: 182px;
+      }
+
+      #nextMonth {
+        right: 370px;
+        top: 182px;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="cabecalho">
+      <div class="cabecalho__logo">
+        <a href="administrador.html">
+          <img class="logo" src="../assets/OdontoCom_White.png" alt="Logo" />
+        </a>
+      </div>
+    </header>
+    <main>
+      <nav class="nav__administrador__container">
+        <div class="nav__div__conatiner">
+          <img src="../assets/person-circle.png" alt="" />
+          <div class="div__administrador">
+            <h2 class="administrador__titulo">Administrador</h2>
+            <a class="editarPerfil" href="">Editar Perfil</a>
+          </div>
+        </div>
+        <h3>ODONTOCOM</h3>
+        <div class="links__container">
+          <a class="links__escrita" href="consultas.html">
+            <div class="links__opcoes">
+              <img
+                class="links__imagem"
+                src="../assets/calendario.png"
+                alt=""
+              />
+              Agendamento
+            </div>
+          </a>
+          <a class="links__escrita" href="administradores.html">
+            <div class="links__opcoes">
+              <img
+                class="links__imagem"
+                src="../assets/cardAdministrador.png"
+                alt=""
+              />
+              Administradores
+            </div>
+          </a>
+          <a class="links__escrita" href="usuario.html">
+            <div class="links__opcoes">
+              <img class="links__imagem" src="../assets/person 1.png" alt="" />
+              Usuário
+            </div>
+          </a>
+          <a class="links__escrita" href="">
+            <div class="links__opcoes">
+              <img class="links__imagem" src="../assets/maleta.png" alt="" />
+              Profissionais
+            </div>
+          </a>
+          <a class="links__escrita" href="">
+            <div class="links__opcoes">
+              <img
+                class="links__imagem"
+                src="../assets/engrenagem.png"
+                alt=""
+              />
+              Gerenciar
+            </div>
+          </a>
+          <a class="links__escrita" href="">
+            <div class="links__opcoes">
+              <img class="links__imagem" src="../assets/sair.png" alt="" />
+              sair
+            </div>
+          </a>
+        </div>
+      </nav>
+      <section class="usuario__container">
+        <div class="div__usuarios">
+          <p>Consultas</p>
+        </div>
+        <div class="planner">
+          <h1 class="txt_Consulta">Marcar Consulta</h1>
+          <div class="calendar-header">
+            <button id="prevMonth">&lt;</button>
+            <h2 id="currentMonth">Abril</h2>
+            <button id="nextMonth">&gt;</button>
+          </div>
+          <div id="calendar" class="calendar-grid"></div>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      let currentMonth = new Date().getMonth();
+      let currentYear = new Date().getFullYear();
+      let selectedMonth = currentMonth;
+      let selectedYear = currentYear;
+
+      window.onload = function () {
+        generateCalendar(currentMonth, currentYear);
+        updateMonthYear();
+
+        document
+          .getElementById("prevMonth")
+          .addEventListener("click", function () {
+            currentMonth--;
+            if (currentMonth < 0) {
+              currentMonth = 11;
+              currentYear--;
+            }
+            selectedMonth = currentMonth;
+            selectedYear = currentYear;
+            generateCalendar(currentMonth, currentYear);
+            updateMonthYear();
+          });
+
+        document
+          .getElementById("nextMonth")
+          .addEventListener("click", function () {
+            currentMonth++;
+            if (currentMonth > 11) {
+              currentMonth = 0;
+              currentYear++;
+            }
+            selectedMonth = currentMonth;
+            selectedYear = currentYear;
+            generateCalendar(currentMonth, currentYear);
+            updateMonthYear();
+          });
+      };
+
+      function updateMonthYear() {
+        const months = [
+          "Janeiro",
+          "Fevereiro",
+          "Março",
+          "Abril",
+          "Maio",
+          "Junho",
+          "Julho",
+          "Agosto",
+          "Setembro",
+          "Outubro",
+          "Novembro",
+          "Dezembro",
+        ];
+        document.getElementById(
+          "currentMonth"
+        ).textContent = `${months[currentMonth]} de ${currentYear}`;
+      }
+
+      function generateCalendar(month, year) {
+        const calendar = document.getElementById("calendar");
+        calendar.innerHTML = ""; // Limpa o conteúdo atual
+
+        const firstDayOfMonth = new Date(year, month, 1);
+        const lastDayOfMonth = new Date(year, month + 1, 0);
+
+        const firstDayOfWeek = firstDayOfMonth.getDay();
+        const totalDays = lastDayOfMonth.getDate();
+
+        // Preenchendo os dias em branco no início
+        for (let i = 0; i < firstDayOfWeek; i++) {
+          let blankDay = document.createElement("div");
+          blankDay.className = "calendar-day empty";
+          calendar.appendChild(blankDay);
+        }
+
+        // Preenchendo os dias do mês
+        for (let day = 1; day <= totalDays; day++) {
+          let daySquare = document.createElement("button");
+          daySquare.addEventListener("click", function () {
+            window.location.href = "table_consultas.html";
+          });
+          daySquare.className = "calendar-day";
+          daySquare.textContent = day;
+          calendar.appendChild(daySquare);
+        }
+      }
+    </script>
+  </body>
+</html>
