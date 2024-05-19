@@ -1,0 +1,70 @@
+.div__input__gerenciar__container{
+    margin: 20px;
+    background-color: white;
+    height: 252px;
+}
+
+.div__input__gerenciar{
+    display: flex;
+}
+
+.input__gerenciar{
+    display: flex;
+    width: 227px;
+    flex-direction: column;
+    margin: 22px 33px 0px 14px;
+}
+
+.TUSS{
+    width: 105px;
+}
+
+
+.botao__gerenciar{
+    background: #4CAF50;
+    color: var(--cor-texto-principal);
+    width: 180px;
+    height: 24px;
+    border: none;
+    cursor: pointer;
+    margin-top: 23px;
+}
+.botao__pesquisar{
+    background: #4CAF50;
+    color: var(--cor-texto-principal);
+    width: 93px;
+    height: 24px;
+    border: none;
+    cursor: pointer;
+    margin: 15px;
+}
+
+.tabela__gerenciar{
+    height: 120px;
+    margin: 17px 14px;
+    background-color: rgb(247, 247, 255);
+}
+
+.informacoes__container{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.disposição__disponibildade{
+    background-color: white;
+    width: 500px;
+    height: 350px;
+    border-radius: 10px;
+}
+
+.texto__informacoes{
+    padding: 17px 17px 0;
+    font-size: 17px;
+    font-weight: 400;
+}
+
+.tabela__gerenciar__informacoes{
+    height: 280px;
+    margin: 15px;
+    background-color: rgb(247, 247, 255);
+}

@@ -4,7 +4,7 @@
 @import url("sobrenos.css");
 @import url("rodape.css");
 @import url("usuario.css");
-
+@import url("gerenciar.css");
 
 :root{
     --cor-principal: #005632;
