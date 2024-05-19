@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style/style.css">
     <link rel="shortcut icon" href="../assets/LogoFav.PNG" type="image/x-icon">
-    <title>Administradores</title>
+    <title>Gerenciar</title>
 </head>
 
 <body>
@@ -53,7 +53,7 @@
                         Profissionais
                     </div>
                 </a>
-                <a class="links__escrita" href="gerenciar.html">
+                <a class="links__escrita" href="">
                     <div class="links__opcoes">
                         <img class="links__imagem" src="../assets/engrenagem.png" alt="">
                         Gerenciar
@@ -69,40 +69,46 @@
         </nav>
         <section class="usuario__container">
             <div class="div__usuarios">
-                <p>Administradores</p>
+                <p>Gerenciamento</p>
             </div>
-            <div class="div__input__container">
-                <div class="div__input">
-                    <div class="input">
+            <div class="div__input__gerenciar__container">
+                <div class="div__input__gerenciar">
+                    <div class="input__gerenciar">
                         <label for="">Nome</label>
                         <input type="text">
+                        <div class="botao__gerenciar__container">
+                            <button class="botao__gerenciar"><img class="botao__icon" src="../assets/+.png"
+                                    alt="">Adcionar Procedimento</button>
+                        </div>
                     </div>
-                    <div class="input">
-                        <label for="">E-mail</label>
+                    <div class="input__gerenciar  TUSS">
+                        <label for="">TUSS</label>
                         <input type="text">
                     </div>
-                    <div class="input input__telefone__cpf">
-                        <label for="">Telefone</label>
-                        <input type="text">
-                    </div>
-                    <div class="input input__telefone__cpf">
-                        <label for="">CPF</label>
-                        <input type="text">
+                    <div class="input__gerenciar">
+                        <button class="botao__pesquisar">Pesquisar</button>
                     </div>
                 </div>
-                <div class="div__botao">
-                    <button class="botao"><img class="botao__icon" src="../assets/Lupa.png" alt="">Pesquisar</button>
-                </div>    
-            </div>
-            <div class="tabela__container">
-                <div class="div__botao__novoUsuario">
-                    <button class="botao botao__novoUsuario"><img class="botao__icon"src="../assets/usuario+.png" alt="">Criar Administrador</button>
-                </div>
-                <div class="tabela">
+                <div class="tabela__gerenciar">
                     <!--A ser Incrementado-->
+                </div>
+            </div>
+            <div class="informacoes__container">
+                <div class="disposição__disponibildade">
+                    <h2 class="texto__informacoes">Disposição dos Profissionais</h2>
+                    <div class="tabela__gerenciar__informacoes">
+
+                    </div>
+                </div>
+                <div class="disposição__disponibildade">
+                    <h2 class="texto__informacoes">Disponibildade de Agendamento</h2>
+                    <div class="tabela__gerenciar__informacoes">
+
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 </body>
+
 </html>

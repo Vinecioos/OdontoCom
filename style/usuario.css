@@ -1,4 +1,4 @@
-main{
+.main__container{
     display: flex;
     height: 100vh;
     background-color: rgb(211, 211, 211);
@@ -57,7 +57,6 @@ h3{
 
 .links__opcoes:hover{
     background-color:#238B60;
-    ;
 }
 
 .links__imagem{
@@ -96,7 +95,9 @@ h3{
 
 .div__input{
     display: flex;
-    margin: 25px 35px; /* Valor original 25px 26px*/
+    justify-content: space-evenly;
+    margin-top: 25px;
+    /* Valor original 25px 26px*/
 }
 
 .input{
@@ -107,7 +108,7 @@ h3{
 }
 
 .input__telefone__cpf{
-    width: 125px;   /* Valor original 113px */
+    width: 140px;   /* Valor original 113px */
 }
 
 .div__botao{
@@ -142,7 +143,7 @@ h3{
 }
 
 .botao__novoUsuario{
-    width: 140px;
+    width: 190px;
     height: 24px;
     padding: 5px;
 }
