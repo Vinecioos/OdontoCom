@@ -13,7 +13,7 @@
 <body>
     <header class="cabecalho">
         <div class="cabecalho__logo">
-            <a href="administrador.html">
+            <a href="administradores.php">
                 <img class="logo" src="../assets/OdontoCom_White.png" alt="Logo">
             </a>
         </div>
@@ -35,25 +35,25 @@
                         Agendamento
                     </div>
                 </a>
-                <a class="links__escrita" href="administradores.html">
+                <a class="links__escrita" href="administradores.php">
                     <div class="links__opcoes">
                         <img class="links__imagem" src="../assets/cardAdministrador.png" alt="">
                         Administradores
                     </div>
                 </a>
-                <a class="links__escrita" href="usuario.html">
+                <a class="links__escrita" href="usuario.php">
                     <div class="links__opcoes">
                         <img class="links__imagem" src="../assets/person 1.png" alt="">
                         Usuário
                     </div>
                 </a>
-                <a class="links__escrita" href="profissionais.html">
+                <a class="links__escrita" href="profissionais.php">
                     <div class="links__opcoes">
                         <img class="links__imagem" src="../assets/maleta.png" alt="">
                         Profissionais
                     </div>
                 </a>
-                <a class="links__escrita" href="gerenciar.html">
+                <a class="links__escrita" href="gerenciar.php">
                     <div class="links__opcoes">
                         <img class="links__imagem" src="../assets/engrenagem.png" alt="">
                         Gerenciar

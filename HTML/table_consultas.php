@@ -22,7 +22,7 @@
   <body>
     <header class="cabecalho">
       <div class="cabecalho__logo">
-        <a href="administrador.html">
+        <a href="administradores.php">
           <img class="logo" src="../assets/OdontoCom_White.png" alt="Logo" />
         </a>
       </div>
@@ -38,7 +38,7 @@
         </div>
         <h3>ODONTOCOM</h3>
         <div class="links__container">
-          <a class="links__escrita" href="consultas.html">
+          <a class="links__escrita" href="consultas.php">
             <div class="links__opcoes">
               <img
                 class="links__imagem"
@@ -48,7 +48,7 @@
               Agendamento
             </div>
           </a>
-          <a class="links__escrita" href="administradores.html">
+          <a class="links__escrita" href="administradores.php">
             <div class="links__opcoes">
               <img
                 class="links__imagem"
@@ -58,7 +58,7 @@
               Administradores
             </div>
           </a>
-          <a class="links__escrita" href="usuario.html">
+          <a class="links__escrita" href="usuario.php">
             <div class="links__opcoes">
               <img class="links__imagem" src="../assets/person 1.png" alt="" />
               Usuário
