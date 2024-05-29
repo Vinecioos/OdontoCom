@@ -10,14 +10,13 @@
     <title>Usuario</title>
     <style>
         .tabela {
-            width: 100%;
+            width: 50%;
             border-collapse: collapse;
             margin-top: 20px;
         }
 
         .tabela thead {
             background-color: #d3d3d3;
-            /* fundo cinza para thead */
         }
 
         .tabela th,
@@ -29,12 +28,10 @@
 
         .tabela tbody tr:nth-child(odd) {
             background-color: #ffffff;
-            /* fundo branco para linhas ímpares */
         }
 
         .tabela tbody tr:nth-child(even) {
             background-color: #f2f2f2;
-            /* fundo cinza claro para linhas pares */
         }
 
         .action-buttons {
@@ -48,6 +45,41 @@
 
         .action-buttons img {
             width: 20px;
+            cursor: pointer;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
             cursor: pointer;
         }
     </style>
@@ -72,7 +104,7 @@
             </div>
             <h3>ODONTOCOM</h3>
             <div class="links__container">
-                <a class="links__escrita" href="">
+                <a class="links__escrita" href="consultas.html">
                     <div class="links__opcoes">
                         <img class="links__imagem" src="../assets/calendario.png" alt="">
                         Agendamento
@@ -102,7 +134,7 @@
                         Gerenciar
                     </div>
                 </a>
-                <a class="links__escrita" href="">
+                <a class="links__escrita" href="login.html">
                     <div class="links__opcoes">
                         <img class="links__imagem" src="../assets/sair.png" alt="">
                         sair
@@ -117,32 +149,32 @@
             <div class="div__input__container">
                 <div class="div__input">
                     <div class="input">
-                        <label for="">Nome</label>
-                        <input type="text">
+                        <label for="searchNome">Nome</label>
+                        <input type="text" id="searchNome">
                     </div>
                     <div class="input">
-                        <label for="">E-mail</label>
-                        <input type="text">
+                        <label for="searchEmail">E-mail</label>
+                        <input type="text" id="searchEmail">
                     </div>
                     <div class="input input__telefone__cpf">
-                        <label for="">Telefone</label>
-                        <input type="text">
+                        <label for="searchTelefone">Telefone</label>
+                        <input type="text" id="searchTelefone">
                     </div>
                     <div class="input input__telefone__cpf">
-                        <label for="">CPF</label>
-                        <input type="text">
+                        <label for="searchCpf">CPF</label>
+                        <input type="text" id="searchCpf">
                     </div>
                 </div>
                 <div class="div__botao">
-                    <button class="botao"><img class="botao__icon" src="../assets/Lupa.png" alt="">Pesquisar</button>
+                    <button class="botao" id="searchBtn"><img class="botao__icon" src="../assets/Lupa.png" alt="">Pesquisar</button>
                 </div>
             </div>
             <div class="tabela__container">
                 <div class="div__botao__novoUsuario">
-                    <button class="botao botao__novoUsuario"><img class="botao__icon" src="../assets/usuario+.png" alt="">Criar novo usuário</button>
+                    <button id="openModalBtn" class="botao botao__novoUsuario"><img class="botao__icon" src="../assets/usuario+.png" alt="">Criar novo usuário</button>
                 </div>
                 <div class="tabela">
-                    <table>
+                    <table id="userTable">
                         <thead>
                             <tr>
                                 <th>Nome</th>
@@ -155,7 +187,7 @@
                         </thead>
                         <tbody>
                             <?php
-                            $dbHost = "localhost"; // Use "localhost" (all lowercase) instead of "Localhost"
+                            $dbHost = "localhost";
                             $dbUsername = "root";
                             $dbPassword = "";
                             $dbName = "login";
@@ -178,10 +210,7 @@
                     <td>" . $row["cpf"] . "</td>
                     <td>" . $row["codigoSeg"] . "</td>
                     <td class='action-buttons'>
-                        <form action='editar_user.php' method='POST'>
-                            <input type='hidden' name='email' value='" . $row["email"] . "'>
-                            <button type='submit'><img src='../assets/edit.png' alt='Editar'></button>
-                        </form>
+                        <button class='edit-btn' data-nome='" . $row["nome"] . "' data-email='" . $row["email"] . "' data-telefone='" . $row["telefone"] . "' data-cpf='" . $row["cpf"] . "' data-codigoseg='" . $row["codigoSeg"] . "'><img src='../assets/edit.png' alt='Editar'></button>
                         <form action='excluir_user.php' method='POST'>
                             <input type='hidden' name='email' value='" . $row["email"] . "'>
                             <button type='submit'><img src='../assets/delete.png' alt='Excluir'></button>
@@ -198,8 +227,108 @@
                     </table>
                 </div>
             </div>
+
+            <div id="userModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2>Criar Novo Usuário</h2>
+                    <form id="createUserForm" action="criar_usuario.php" method="POST">
+                        <label for="nome">Nome</label>
+                        <input type="text" id="nome" name="nome" required>
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" required>
+                        <label for="telefone">Telefone</label>
+                        <input type="text" id="telefone" name="telefone" required>
+                        <label for="cpf">CPF</label>
+                        <input type="text" id="cpf" name="cpf" required>
+                        <label for="codigoSeg">Código de Segurança</label>
+                        <input type="text" id="codigoSeg" name="codigoSeg" required>
+                        <button type="submit">Criar Usuário</button>
+                    </form>
+                </div>
+            </div>
+
+            <div id="editModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2>Editar Usuário</h2>
+                    <form id="editUserForm" action="editar_user.php" method="POST">
+                        <input type="hidden" id="edit_email" name="email" required>
+                        <label for="edit_nome">Nome</label>
+                        <input type="text" id="edit_nome" name="nome" required>
+                        <label for="edit_new_email">E-mail</label>
+                        <input type="email" id="edit_new_email" name="new_email" required>
+                        <label for="edit_telefone">Telefone</label>
+                        <input type="text" id="edit_telefone" name="telefone" required>
+                        <label for="edit_cpf">CPF</label>
+                        <input type="text" id="edit_cpf" name="cpf" required>
+                        <label for="edit_codigoSeg">Código de Segurança</label>
+                        <input type="text" id="edit_codigoSeg" name="codigoSeg" required>
+                        <button type="submit">Atualizar Usuário</button>
+                    </form>
+                </div>
+            </div>
         </section>
     </main>
+
+    <script>
+        document.getElementById('openModalBtn').onclick = function() {
+            document.getElementById('userModal').style.display = 'block';
+        }
+
+        document.querySelectorAll('.close').forEach(function(element) {
+            element.onclick = function() {
+                element.closest('.modal').style.display = 'none';
+            }
+        });
+
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+            }
+        }
+
+        document.querySelectorAll('.edit-btn').forEach(function(button) {
+            button.onclick = function() {
+                var nome = this.getAttribute('data-nome');
+                var email = this.getAttribute('data-email');
+                var telefone = this.getAttribute('data-telefone');
+                var cpf = this.getAttribute('data-cpf');
+                var codigoSeg = this.getAttribute('data-codigoseg');
+
+                document.getElementById('edit_nome').value = nome;
+                document.getElementById('edit_email').value = email;
+                document.getElementById('edit_new_email').value = email;
+                document.getElementById('edit_telefone').value = telefone;
+                document.getElementById('edit_cpf').value = cpf;
+                document.getElementById('edit_codigoSeg').value = codigoSeg;
+
+                document.getElementById('editModal').style.display = 'block';
+            }
+        });
+
+        document.getElementById('searchBtn').onclick = function () {
+            var nome = document.getElementById('searchNome').value.toLowerCase();
+            var email = document.getElementById('searchEmail').value.toLowerCase();
+            var telefone = document.getElementById('searchTelefone').value.toLowerCase();
+            var cpf = document.getElementById('searchCpf').value.toLowerCase();
+
+            var rows = document.querySelectorAll('#userTable tbody tr');
+
+            rows.forEach(function (row) {
+                var rowNome = row.cells[0].innerText.toLowerCase();
+                var rowEmail = row.cells[1].innerText.toLowerCase();
+                var rowTelefone = row.cells[2].innerText.toLowerCase();
+                var rowCpf = row.cells[3].innerText.toLowerCase();
+
+                if (rowNome.includes(nome) && rowEmail.includes(email) && rowTelefone.includes(telefone) && rowCpf.includes(cpf)) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        }
+    </script>
 </body>
 
 </html>

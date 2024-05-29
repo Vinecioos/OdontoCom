@@ -31,7 +31,7 @@
         </a>
       </div>
     </header>
-    <main>
+    <main class="main__container">
       <nav class="nav__administrador__container">
         <div class="nav__div__conatiner">
           <img src="../assets/person-circle.png" alt="" />
@@ -52,7 +52,7 @@
               Agendamento
             </div>
           </a>
-          <a class="links__escrita" href="administradores.html">
+          <a class="links__escrita" href="administradores.php">
             <div class="links__opcoes">
               <img
                 class="links__imagem"
@@ -62,13 +62,13 @@
               Administradores
             </div>
           </a>
-          <a class="links__escrita" href="usuario.html">
+          <a class="links__escrita" href="usuario.php">
             <div class="links__opcoes">
               <img class="links__imagem" src="../assets/person 1.png" alt="" />
               Usuário
             </div>
           </a>
-          <a class="links__escrita" href="">
+          <a class="links__escrita" href="profissionais.php">
             <div class="links__opcoes">
               <img class="links__imagem" src="../assets/maleta.png" alt="" />
               Profissionais
@@ -84,7 +84,7 @@
               Gerenciar
             </div>
           </a>
-          <a class="links__escrita" href="">
+          <a class="links__escrita" href="login.html">
             <div class="links__opcoes">
               <img class="links__imagem" src="../assets/sair.png" alt="" />
               sair
@@ -188,7 +188,9 @@
         for (let day = 1; day <= totalDays; day++) {
           let daySquare = document.createElement("button");
           daySquare.addEventListener("click", function () {
-            window.location.href = "table_consultas.html";
+            let selectedDate = new Date(selectedYear, selectedMonth, day);
+            let formattedDate = selectedDate.toISOString().split("T")[0]; // Formata a data como "YYYY-MM-DD"
+            window.location.href = "table_consultas.php?data=" + formattedDate;
           });
           daySquare.className = "calendar-day";
           daySquare.textContent = day;
