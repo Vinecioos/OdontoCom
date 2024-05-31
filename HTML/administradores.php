@@ -9,7 +9,7 @@
     <link rel="shortcut icon" href="../assets/LogoFav.PNG" type="image/x-icon">
     <title>Administradores</title>
 
-    <style>
+     <style>
         .tabela {
             width: 50%;
             border-collapse: collapse;
@@ -69,6 +69,21 @@
             width: 80%;
             max-width: 600px;
             position: relative;
+        }
+
+        .modal-content .input {
+            margin-bottom: 15px;
+        }
+
+        .modal-content label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .modal-content input {
+            width: calc(100% - 20px);
+            padding: 5px;
+            box-sizing: border-box;
         }
 
         .close {

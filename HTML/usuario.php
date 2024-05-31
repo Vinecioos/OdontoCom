@@ -7,8 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style/style.css">
     <link rel="shortcut icon" href="../assets/LogoFav.PNG" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
+
     <title>Usuario</title>
     <style>
+        .btn-link {
+            background: none;
+            border: none;
+            padding: 0;
+        }
+
         .tabela {
             width: 50%;
             border-collapse: collapse;
@@ -48,11 +56,10 @@
             cursor: pointer;
         }
 
-        /* Modal */
         .modal {
             display: none;
             position: fixed;
-            z-index: 1;
+            z-index: 9999;
             left: 0;
             top: 0;
             width: 100%;
@@ -67,6 +74,23 @@
             padding: 20px;
             border: 1px solid #888;
             width: 80%;
+            max-width: 600px;
+            position: relative;
+        }
+
+        .modal-content .input {
+            margin-bottom: 15px;
+        }
+
+        .modal-content label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .modal-content input {
+            width: calc(100% - 20px);
+            padding: 5px;
+            box-sizing: border-box;
         }
 
         .close {
@@ -210,11 +234,10 @@
                     <td>" . $row["cpf"] . "</td>
                     <td>" . $row["codigoSeg"] . "</td>
                     <td class='action-buttons'>
-                        <button class='edit-btn' data-nome='" . $row["nome"] . "' data-email='" . $row["email"] . "' data-telefone='" . $row["telefone"] . "' data-cpf='" . $row["cpf"] . "' data-codigoseg='" . $row["codigoSeg"] . "'><img src='../assets/edit.png' alt='Editar'></button>
-                        <form action='excluir_user.php' method='POST'>
+                    <a class='edit-btn' data-nome='" . $row["nome"] . "' data-email='" . $row["email"] . "' data-telefone='" . $row["telefone"] . "' data-cpf='" . $row["cpf"] . "' data-codigoseg='" . $row["codigoSeg"] . "'><i class='bi bi-pencil'></i></a>
+                    <form action='excluir_user.php' method='POST'>
                             <input type='hidden' name='email' value='" . $row["email"] . "'>
-                            <button type='submit'><img src='../assets/delete.png' alt='Excluir'></button>
-                        </form>
+                            <button type='submit' class='btn btn-link p-0'><i class='bi bi-trash'></i></button>                        </form>
                     </td>
                 </tr>";
                                 }
@@ -307,7 +330,7 @@
             }
         });
 
-        document.getElementById('searchBtn').onclick = function () {
+        document.getElementById('searchBtn').onclick = function() {
             var nome = document.getElementById('searchNome').value.toLowerCase();
             var email = document.getElementById('searchEmail').value.toLowerCase();
             var telefone = document.getElementById('searchTelefone').value.toLowerCase();
@@ -315,7 +338,7 @@
 
             var rows = document.querySelectorAll('#userTable tbody tr');
 
-            rows.forEach(function (row) {
+            rows.forEach(function(row) {
                 var rowNome = row.cells[0].innerText.toLowerCase();
                 var rowEmail = row.cells[1].innerText.toLowerCase();
                 var rowTelefone = row.cells[2].innerText.toLowerCase();
